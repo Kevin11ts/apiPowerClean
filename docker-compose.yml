@@ -1,0 +1,50 @@
+services:
+  app:
+    container_name: powerclean-app
+    build:
+      context: .  # Carpeta donde se encuentra el Dockerfile
+      dockerfile: Dockerfile  # Nombre del Dockerfile (opcional si se llama "Dockerfile")
+    working_dir: /app
+    volumes:
+      - .:/app  # Monta el directorio actual
+      - /app/node_modules  # Evita sobrescribir node_modules localmente
+    ports:
+      - "3000:3000"  # Puerto mapeado
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - DB_HOST=db  # Host de la base de datos (nombre del servicio)
+      - DB_USER=postgres  # Usuario de PostgreSQL
+      - DB_PASSWORD=kevin11  # Contraseña de PostgreSQL
+      - DB_NAME=powerclean  # Nombre de la base de datos
+      - SWAGGER_LOCAL=http://localhost:3000/api
+      - SWAGGER_PRODUCCION=http://http://69.48.203.84:3000/api  # Ajusta el dominio si es necesario
+    depends_on:
+      - db  # La aplicación depende de la base de datos
+    networks:
+      - powerclean-network
+
+
+  db:
+    image: postgres:16  # Tu versión de PostgreSQL
+    container_name: powerclean-db
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=kevin11
+      - POSTGRES_DB=powerclean
+    volumes:
+      - pgdata:/var/lib/postgresql/data  # Volumen persistente
+      - ./dbinit.sql:/docker-entrypoint-initdb.d/dbinit.sql  # Archivo de inicialización (opcional)
+    ports:
+      - "5432:5432"  # Puerto estándar de PostgreSQL
+    networks:
+      - powerclean-network
+
+networks:
+  powerclean-network:
+    driver: bridge
+
+volumes:
+  pgdata:
+    driver: local
