@@ -2,8 +2,7 @@ import Rol from '../../models/roles/rolModel.js';
 import excel from 'xlsx'; 
 
 class RolController {
-   
-    // Obtener todos los roles
+
     static async getAllRol(req, res) {
         try {
             const rols = await Rol.findAll();
