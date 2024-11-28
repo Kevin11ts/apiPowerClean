@@ -3,7 +3,7 @@ import excel from 'xlsx';
 
 class DetalleVentaController {
 
-    // Obtener todos los detalles de ventas
+    
     static async getAllDetalleVentas(req, res) {
         try {
             const detalleVentas = await DetalleVenta.findAll();
