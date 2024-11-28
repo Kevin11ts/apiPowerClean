@@ -13,6 +13,8 @@ class InventarioController {
     }
 
     // Buscar inventarios en todas las columnas usando una cadena de búsqueda
+
+    //Aqui se buscan inventarios de todas las columnas
     static async searchAllColumns(req, res) {
         try {
             const searchString = req.params.q;
