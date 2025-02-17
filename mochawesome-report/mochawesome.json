@@ -5,9 +5,9 @@
     "passes": 106,
     "pending": 0,
     "failures": 0,
-    "start": "2024-11-28T20:31:23.020Z",
-    "end": "2024-11-28T20:31:23.475Z",
-    "duration": 455,
+    "start": "2024-12-05T03:22:47.489Z",
+    "end": "2024-12-05T03:22:48.549Z",
+    "duration": 1060,
     "testsRegistered": 106,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "609c1356-a180-42f6-ae6d-dea391c6f842",
+      "uuid": "cf44bf2f-1deb-4106-af76-c333b0f62b39",
       "title": "",
       "fullFile": "",
       "file": "",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "948c75ee-70c9-4e19-9744-bf5949d11182",
+          "uuid": "fdc27695-77e0-4053-874d-f460649a77a0",
           "title": "Pruebas del controlador de clientes",
           "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\clienteControlador.test.js",
           "file": "\\tests\\clienteControlador.test.js",
@@ -46,8 +46,8 @@
               "context": null,
               "code": "sinon.restore();",
               "err": {},
-              "uuid": "ea24db50-fcdb-4bf4-ae77-145384c1f006",
-              "parentUUID": "948c75ee-70c9-4e19-9744-bf5949d11182",
+              "uuid": "9dac632b-1665-419a-9449-8c6b349a01eb",
+              "parentUUID": "fdc27695-77e0-4053-874d-f460649a77a0",
               "isHook": true,
               "skipped": false
             }
@@ -55,7 +55,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "e14cc3c2-dc6e-4ae7-853b-5cfa8a296ffb",
+              "uuid": "34bef2df-e4a3-410e-b66d-4e93b3d85cb8",
               "title": "Método GET: Obtiene todos los clientes",
               "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\clienteControlador.test.js",
               "file": "\\tests\\clienteControlador.test.js",
@@ -66,7 +66,7 @@
                   "title": "Debería obtener todos los clientes exitosamente",
                   "fullTitle": "Pruebas del controlador de clientes Método GET: Obtiene todos los clientes Debería obtener todos los clientes exitosamente",
                   "timedOut": false,
-                  "duration": 5,
+                  "duration": 3,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -75,8 +75,8 @@
                   "context": null,
                   "code": "const mockClientes = [\n    { id: 1, nombre: 'Juan', apellido: 'Pérez' },\n    { id: 2, nombre: 'Ana', apellido: 'López' }\n];\nsinon.stub(Cliente, 'findAll').resolves(mockClientes);\nconst req = {};\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait ClienteController.getAllClientes(req, res);\nexpect(res.status.calledWith(200)).to.be.true;\nexpect(res.json.calledWith({\n    code: 200,\n    message: 'Operación exitosa',\n    data: mockClientes\n})).to.be.true;",
                   "err": {},
-                  "uuid": "8b20d16f-6472-49bc-af7f-8041b0d26113",
-                  "parentUUID": "e14cc3c2-dc6e-4ae7-853b-5cfa8a296ffb",
+                  "uuid": "1c60b63c-3cd0-4520-8cea-37dc5f0e949f",
+                  "parentUUID": "34bef2df-e4a3-410e-b66d-4e93b3d85cb8",
                   "isHook": false,
                   "skipped": false
                 },
@@ -93,27 +93,27 @@
                   "context": null,
                   "code": "sinon.stub(Cliente, 'findAll').rejects(new Error('Error de base de datos'));\nconst req = {};\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait ClienteController.getAllClientes(req, res);\nexpect(res.status.calledWith(500)).to.be.true;\nexpect(res.json.calledWith({\n    code: 500,\n    message: 'Error de base de datos',\n    data: null\n})).to.be.true;",
                   "err": {},
-                  "uuid": "60af4c4b-4b43-405d-8490-396119e737f8",
-                  "parentUUID": "e14cc3c2-dc6e-4ae7-853b-5cfa8a296ffb",
+                  "uuid": "49e77a86-9b9f-4c69-bb6c-985755e21be2",
+                  "parentUUID": "34bef2df-e4a3-410e-b66d-4e93b3d85cb8",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "8b20d16f-6472-49bc-af7f-8041b0d26113",
-                "60af4c4b-4b43-405d-8490-396119e737f8"
+                "1c60b63c-3cd0-4520-8cea-37dc5f0e949f",
+                "49e77a86-9b9f-4c69-bb6c-985755e21be2"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 6,
+              "duration": 4,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "5e637e32-cc52-4be9-94b0-ffbe8e62acaf",
+              "uuid": "30ea4148-4b25-41af-957e-ad5144241185",
               "title": "Método GET: Buscar clientes por todos los parámetros",
               "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\clienteControlador.test.js",
               "file": "\\tests\\clienteControlador.test.js",
@@ -133,8 +133,8 @@
                   "context": null,
                   "code": "const searchString = 'Juan';\nconst mockClientes = [{ id: 1, nombre: 'Juan', apellido: 'Pérez' }];\nsinon.stub(Cliente, 'searchAllColumns').resolves(mockClientes);\nconst req = { params: { q: searchString } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait ClienteController.searchAllColumns(req, res);\nexpect(res.status.calledWith(200)).to.be.true;\nexpect(res.json.calledWith({\n    code: 200,\n    message: 'Operación exitosa',\n    data: mockClientes\n})).to.be.true;",
                   "err": {},
-                  "uuid": "809a3f66-7a7c-48a4-96f6-19c6033ae20f",
-                  "parentUUID": "5e637e32-cc52-4be9-94b0-ffbe8e62acaf",
+                  "uuid": "d8058952-63d2-4342-88fc-e2f9fab7be97",
+                  "parentUUID": "30ea4148-4b25-41af-957e-ad5144241185",
                   "isHook": false,
                   "skipped": false
                 },
@@ -151,16 +151,16 @@
                   "context": null,
                   "code": "const req = { params: {} };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait ClienteController.searchAllColumns(req, res);\nexpect(res.status.calledWith(400)).to.be.true;\nexpect(res.json.calledWith({\n    code: 400,\n    message: \"El parámetro 'q' es obligatorio\",\n    data: null\n})).to.be.true;",
                   "err": {},
-                  "uuid": "9f6a210f-601a-43e4-94c0-30feae28c4b4",
-                  "parentUUID": "5e637e32-cc52-4be9-94b0-ffbe8e62acaf",
+                  "uuid": "12007401-699b-4954-93b2-5e118cd21739",
+                  "parentUUID": "30ea4148-4b25-41af-957e-ad5144241185",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "809a3f66-7a7c-48a4-96f6-19c6033ae20f",
-                "9f6a210f-601a-43e4-94c0-30feae28c4b4"
+                "d8058952-63d2-4342-88fc-e2f9fab7be97",
+                "12007401-699b-4954-93b2-5e118cd21739"
               ],
               "failures": [],
               "pending": [],
@@ -171,7 +171,7 @@
               "_timeout": 2000
             },
             {
-              "uuid": "4b6e0a40-0fb8-4420-8018-dbd0238347c2",
+              "uuid": "99a77c76-1dce-47d5-91f0-c8fc2024125d",
               "title": "Método POST: Crea un nuevo cliente",
               "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\clienteControlador.test.js",
               "file": "\\tests\\clienteControlador.test.js",
@@ -182,7 +182,7 @@
                   "title": "Debería crear un cliente exitosamente",
                   "fullTitle": "Pruebas del controlador de clientes Método POST: Crea un nuevo cliente Debería crear un cliente exitosamente",
                   "timedOut": false,
-                  "duration": 3,
+                  "duration": 1,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -191,8 +191,8 @@
                   "context": null,
                   "code": "const nuevoCliente = { id: 1, nombre: 'Carlos', apellido: 'Sánchez' };\nsinon.stub(Cliente, 'create').resolves(nuevoCliente);\nconst req = { body: { nombre: 'Carlos', apellido: 'Sánchez' } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait ClienteController.createCliente(req, res);\nexpect(res.status.calledWith(201)).to.be.true;\nexpect(res.json.calledWith({\n    code: 201,\n    message: 'Cliente creado exitosamente',\n    data: nuevoCliente\n})).to.be.true;",
                   "err": {},
-                  "uuid": "011bf9e2-4674-4556-8f00-444eb2ea830f",
-                  "parentUUID": "4b6e0a40-0fb8-4420-8018-dbd0238347c2",
+                  "uuid": "4b91d4ef-bd6b-400b-ac28-c40a6a37f3cc",
+                  "parentUUID": "99a77c76-1dce-47d5-91f0-c8fc2024125d",
                   "isHook": false,
                   "skipped": false
                 },
@@ -209,27 +209,27 @@
                   "context": null,
                   "code": "sinon.stub(Cliente, 'create').rejects(new Error('Error al crear el cliente'));\nconst req = { body: { nombre: 'Carlos', apellido: 'Sánchez' } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait ClienteController.createCliente(req, res);\nexpect(res.status.calledWith(500)).to.be.true;\nexpect(res.json.calledWith({\n    code: 500,\n    message: 'Error al crear el cliente',\n    data: null\n})).to.be.true;",
                   "err": {},
-                  "uuid": "4b8ee3d4-051b-492f-86f0-9bc5dad48969",
-                  "parentUUID": "4b6e0a40-0fb8-4420-8018-dbd0238347c2",
+                  "uuid": "25e1ec3c-032c-4606-b2e6-e75db374285f",
+                  "parentUUID": "99a77c76-1dce-47d5-91f0-c8fc2024125d",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "011bf9e2-4674-4556-8f00-444eb2ea830f",
-                "4b8ee3d4-051b-492f-86f0-9bc5dad48969"
+                "4b91d4ef-bd6b-400b-ac28-c40a6a37f3cc",
+                "25e1ec3c-032c-4606-b2e6-e75db374285f"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 4,
+              "duration": 2,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "0cdacd38-db94-4c61-9486-ab87102d4778",
+              "uuid": "b40a75bb-ccae-43e9-b570-dc16b7b0545a",
               "title": "Método GET: Obtiene un cliente por ID",
               "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\clienteControlador.test.js",
               "file": "\\tests\\clienteControlador.test.js",
@@ -240,7 +240,7 @@
                   "title": "Debería obtener un cliente por ID exitosamente",
                   "fullTitle": "Pruebas del controlador de clientes Método GET: Obtiene un cliente por ID Debería obtener un cliente por ID exitosamente",
                   "timedOut": false,
-                  "duration": 2,
+                  "duration": 1,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -249,8 +249,8 @@
                   "context": null,
                   "code": "const mockCliente = { id: 1, nombre: 'Juan', apellido: 'Pérez' };\nsinon.stub(Cliente, 'findById').resolves(mockCliente);\nconst req = { params: { id: '1' } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait ClienteController.getClienteById(req, res);\nexpect(res.status.calledWith(200)).to.be.true;\nexpect(res.json.calledWith({\n    code: 200,\n    message: 'Operación exitosa',\n    data: mockCliente\n})).to.be.true;",
                   "err": {},
-                  "uuid": "ceed56c4-f8c9-4550-b683-85dd1a2d61b6",
-                  "parentUUID": "0cdacd38-db94-4c61-9486-ab87102d4778",
+                  "uuid": "57843687-f0c9-4b27-9548-5ca6260833ba",
+                  "parentUUID": "b40a75bb-ccae-43e9-b570-dc16b7b0545a",
                   "isHook": false,
                   "skipped": false
                 },
@@ -267,27 +267,27 @@
                   "context": null,
                   "code": "sinon.stub(Cliente, 'findById').resolves(null);\nconst req = { params: { id: '999' } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait ClienteController.getClienteById(req, res);\nexpect(res.status.calledWith(404)).to.be.true;\nexpect(res.json.calledWith({\n    code: 404,\n    message: 'Cliente no encontrado',\n    data: null\n})).to.be.true;",
                   "err": {},
-                  "uuid": "3fc49d9f-a0ca-4b28-b61f-2b966d76ae07",
-                  "parentUUID": "0cdacd38-db94-4c61-9486-ab87102d4778",
+                  "uuid": "d9f0ef16-6396-42b8-b0a2-146e9569577a",
+                  "parentUUID": "b40a75bb-ccae-43e9-b570-dc16b7b0545a",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "ceed56c4-f8c9-4550-b683-85dd1a2d61b6",
-                "3fc49d9f-a0ca-4b28-b61f-2b966d76ae07"
+                "57843687-f0c9-4b27-9548-5ca6260833ba",
+                "d9f0ef16-6396-42b8-b0a2-146e9569577a"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 4,
+              "duration": 3,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "cc3b1d06-76ee-4b94-8fd4-457f35abd697",
+              "uuid": "b74b04bc-aa1c-4e2c-bf50-ea5a4b626fa3",
               "title": "Método PUT: Actualiza un cliente",
               "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\clienteControlador.test.js",
               "file": "\\tests\\clienteControlador.test.js",
@@ -307,8 +307,8 @@
                   "context": null,
                   "code": "const clienteActualizado = { id: 1, nombre: 'Juan', apellido: 'Pérez' };\nsinon.stub(Cliente, 'update').resolves(clienteActualizado);\nconst req = { params: { id: '1' }, body: { nombre: 'Juan', apellido: 'Pérez' } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait ClienteController.updateCliente(req, res);\nexpect(res.status.calledWith(200)).to.be.true;\nexpect(res.json.calledWith({\n    code: 200,\n    message: 'Cliente actualizado exitosamente',\n    data: clienteActualizado\n})).to.be.true;",
                   "err": {},
-                  "uuid": "74423249-2b9b-4612-9d8f-bcc4dff67169",
-                  "parentUUID": "cc3b1d06-76ee-4b94-8fd4-457f35abd697",
+                  "uuid": "357b05d6-90fa-4436-a832-66ca097347c2",
+                  "parentUUID": "b74b04bc-aa1c-4e2c-bf50-ea5a4b626fa3",
                   "isHook": false,
                   "skipped": false
                 },
@@ -316,7 +316,7 @@
                   "title": "Debería devolver un error 404 si el cliente no existe",
                   "fullTitle": "Pruebas del controlador de clientes Método PUT: Actualiza un cliente Debería devolver un error 404 si el cliente no existe",
                   "timedOut": false,
-                  "duration": 1,
+                  "duration": 2,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -325,27 +325,27 @@
                   "context": null,
                   "code": "sinon.stub(Cliente, 'update').resolves(null);\nconst req = { params: { id: '999' }, body: { nombre: 'Juan', apellido: 'Pérez' } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait ClienteController.updateCliente(req, res);\nexpect(res.status.calledWith(404)).to.be.true;\nexpect(res.json.calledWith({\n    code: 404,\n    message: 'Cliente no encontrado',\n    data: null\n})).to.be.true;",
                   "err": {},
-                  "uuid": "41fa33c0-6c14-4c41-8c4d-525c2a3d6b2a",
-                  "parentUUID": "cc3b1d06-76ee-4b94-8fd4-457f35abd697",
+                  "uuid": "ba2e391c-2362-4689-b736-e6af8785027d",
+                  "parentUUID": "b74b04bc-aa1c-4e2c-bf50-ea5a4b626fa3",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "74423249-2b9b-4612-9d8f-bcc4dff67169",
-                "41fa33c0-6c14-4c41-8c4d-525c2a3d6b2a"
+                "357b05d6-90fa-4436-a832-66ca097347c2",
+                "ba2e391c-2362-4689-b736-e6af8785027d"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 3,
+              "duration": 4,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "cebf8087-74b9-49a0-895e-c8eec4c2e92b",
+              "uuid": "a5188c16-0660-4628-a0dd-9c1b4ebb7643",
               "title": "Método DELETE: Elimina un cliente",
               "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\clienteControlador.test.js",
               "file": "\\tests\\clienteControlador.test.js",
@@ -365,8 +365,8 @@
                   "context": null,
                   "code": "const clienteEliminado = { id: 1, nombre: 'Juan', apellido: 'Pérez' };\nsinon.stub(Cliente, 'delete').resolves(clienteEliminado);\nconst req = { params: { id: '1' } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait ClienteController.deleteCliente(req, res);\nexpect(res.status.calledWith(200)).to.be.true;\nexpect(res.json.calledWith({\n    code: 200,\n    message: 'Cliente eliminado exitosamente',\n    data: null\n})).to.be.true;",
                   "err": {},
-                  "uuid": "d7493d17-23ba-4807-8b57-04266b15b5c1",
-                  "parentUUID": "cebf8087-74b9-49a0-895e-c8eec4c2e92b",
+                  "uuid": "f996e7a6-01cd-4048-a95e-41bcfdf1b66a",
+                  "parentUUID": "a5188c16-0660-4628-a0dd-9c1b4ebb7643",
                   "isHook": false,
                   "skipped": false
                 },
@@ -374,7 +374,7 @@
                   "title": "Debería devolver un error 404 si el cliente no existe",
                   "fullTitle": "Pruebas del controlador de clientes Método DELETE: Elimina un cliente Debería devolver un error 404 si el cliente no existe",
                   "timedOut": false,
-                  "duration": 2,
+                  "duration": 1,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -383,27 +383,27 @@
                   "context": null,
                   "code": "sinon.stub(Cliente, 'delete').resolves(false);\nconst req = { params: { id: '999' } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait ClienteController.deleteCliente(req, res);\nexpect(res.status.calledWith(404)).to.be.true;\nexpect(res.json.calledWith({\n    code: 404,\n    message: 'Cliente no encontrado',\n    data: null\n})).to.be.true;",
                   "err": {},
-                  "uuid": "f5392505-8e9e-4c6f-bda4-0224d3efdb63",
-                  "parentUUID": "cebf8087-74b9-49a0-895e-c8eec4c2e92b",
+                  "uuid": "b718afa8-06e5-4b27-bae6-bd3ff534eb0f",
+                  "parentUUID": "a5188c16-0660-4628-a0dd-9c1b4ebb7643",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "d7493d17-23ba-4807-8b57-04266b15b5c1",
-                "f5392505-8e9e-4c6f-bda4-0224d3efdb63"
+                "f996e7a6-01cd-4048-a95e-41bcfdf1b66a",
+                "b718afa8-06e5-4b27-bae6-bd3ff534eb0f"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 3,
+              "duration": 2,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "03df9bd4-83d0-495c-a3c8-eeda1d41437a",
+              "uuid": "8674e176-bd25-499e-9a76-993aa25bbc22",
               "title": "Método GET: Descargar clientes en formato Excel",
               "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\clienteControlador.test.js",
               "file": "\\tests\\clienteControlador.test.js",
@@ -423,8 +423,8 @@
                   "context": null,
                   "code": "const mockClientes = [\n    { id: 1, nombre: 'Juan', apellido: 'Pérez' },\n    { id: 2, nombre: 'Ana', apellido: 'López' }\n];\nsinon.stub(Cliente, 'generarExcel').resolves(mockClientes);\nsinon.stub(excel, 'write').returns(Buffer.from('test'));\nconst req = {};\nconst res = {\n    status: sinon.stub().returnsThis(),\n    setHeader: sinon.stub(),\n    send: sinon.stub()\n};\nawait ClienteController.downloadClientesExcel(req, res);\nexpect(res.setHeader.calledWith('Content-Disposition', 'attachment; filename=clientes.xlsx')).to.be.true;\nexpect(res.setHeader.calledWith('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')).to.be.true;\nexpect(res.send.calledOnce).to.be.true;",
                   "err": {},
-                  "uuid": "f91af03e-3112-4cb1-846c-cd6684465f22",
-                  "parentUUID": "03df9bd4-83d0-495c-a3c8-eeda1d41437a",
+                  "uuid": "c6bf78cd-473e-477c-ae7e-5527a3812dc7",
+                  "parentUUID": "8674e176-bd25-499e-9a76-993aa25bbc22",
                   "isHook": false,
                   "skipped": false
                 },
@@ -432,7 +432,7 @@
                   "title": "Debería manejar errores al generar el archivo Excel",
                   "fullTitle": "Pruebas del controlador de clientes Método GET: Descargar clientes en formato Excel Debería manejar errores al generar el archivo Excel",
                   "timedOut": false,
-                  "duration": 8,
+                  "duration": 10,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -441,21 +441,21 @@
                   "context": null,
                   "code": "sinon.stub(Cliente, 'generarExcel').rejects(new Error('Error al generar el archivo Excel'));\nconst req = {};\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait ClienteController.downloadClientesExcel(req, res);\nexpect(res.status.calledWith(500)).to.be.true;\nexpect(res.json.calledWith({\n    code: 500,\n    message: 'Error al generar el archivo Excel.',\n    data: null\n})).to.be.true;",
                   "err": {},
-                  "uuid": "de7d9cb3-b126-4099-83c3-eefeb0583504",
-                  "parentUUID": "03df9bd4-83d0-495c-a3c8-eeda1d41437a",
+                  "uuid": "7aeefe94-4623-4192-8d93-810ac73f51f6",
+                  "parentUUID": "8674e176-bd25-499e-9a76-993aa25bbc22",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "f91af03e-3112-4cb1-846c-cd6684465f22",
-                "de7d9cb3-b126-4099-83c3-eefeb0583504"
+                "c6bf78cd-473e-477c-ae7e-5527a3812dc7",
+                "7aeefe94-4623-4192-8d93-810ac73f51f6"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 11,
+              "duration": 13,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
@@ -471,7 +471,7 @@
           "_timeout": 2000
         },
         {
-          "uuid": "a469912a-01e0-4e48-82f0-ebcc02044b0b",
+          "uuid": "225375f7-c960-4663-817e-fb53f5d046b0",
           "title": "Pruebas del controlador de detalle de ventas",
           "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\detalleVentaControlador.test.js",
           "file": "\\tests\\detalleVentaControlador.test.js",
@@ -490,8 +490,8 @@
               "context": null,
               "code": "sinon.restore();",
               "err": {},
-              "uuid": "5d84113b-6af6-444a-8ad1-83b64b8af473",
-              "parentUUID": "a469912a-01e0-4e48-82f0-ebcc02044b0b",
+              "uuid": "3469daf4-1a17-48ce-975f-6ba98ea9bdf2",
+              "parentUUID": "225375f7-c960-4663-817e-fb53f5d046b0",
               "isHook": true,
               "skipped": false
             }
@@ -499,7 +499,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "cd5106b2-47b3-42a3-9c19-c7f8e6d5135b",
+              "uuid": "fd0da9b0-9c0b-4df8-8a03-4e4152d63d71",
               "title": "Método GET: Obtiene todos los detalles de ventas",
               "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\detalleVentaControlador.test.js",
               "file": "\\tests\\detalleVentaControlador.test.js",
@@ -510,7 +510,7 @@
                   "title": "Debería obtener todos los detalles de ventas exitosamente",
                   "fullTitle": "Pruebas del controlador de detalle de ventas Método GET: Obtiene todos los detalles de ventas Debería obtener todos los detalles de ventas exitosamente",
                   "timedOut": false,
-                  "duration": 0,
+                  "duration": 1,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -519,8 +519,8 @@
                   "context": null,
                   "code": "const mockDetalleVentas = [\n    { id: 1, producto: 'Producto 1', cantidad: 10 },\n    { id: 2, producto: 'Producto 2', cantidad: 20 }\n];\nsinon.stub(DetalleVenta, 'findAll').resolves(mockDetalleVentas);\nconst req = {};\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait DetalleVentaController.getAllDetalleVentas(req, res);\nexpect(res.status.calledWith(200)).to.be.true;\nexpect(res.json.calledWith({\n    code: 200,\n    message: 'Operación exitosa',\n    data: mockDetalleVentas\n})).to.be.true;",
                   "err": {},
-                  "uuid": "e4189102-b573-49d9-b377-da4b67a2281b",
-                  "parentUUID": "cd5106b2-47b3-42a3-9c19-c7f8e6d5135b",
+                  "uuid": "2f597c5f-889c-426b-86de-c267a8d69cae",
+                  "parentUUID": "fd0da9b0-9c0b-4df8-8a03-4e4152d63d71",
                   "isHook": false,
                   "skipped": false
                 },
@@ -537,74 +537,16 @@
                   "context": null,
                   "code": "sinon.stub(DetalleVenta, 'findAll').rejects(new Error('Error de base de datos'));\nconst req = {};\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait DetalleVentaController.getAllDetalleVentas(req, res);\nexpect(res.status.calledWith(500)).to.be.true;\nexpect(res.json.calledWith({\n    code: 500,\n    message: 'Error de base de datos',\n    data: null\n})).to.be.true;",
                   "err": {},
-                  "uuid": "bcf8290c-2463-458f-9e23-dd14f07f50cc",
-                  "parentUUID": "cd5106b2-47b3-42a3-9c19-c7f8e6d5135b",
+                  "uuid": "09d8bd3a-6bd5-4e3a-a2ee-3d1286ebef14",
+                  "parentUUID": "fd0da9b0-9c0b-4df8-8a03-4e4152d63d71",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "e4189102-b573-49d9-b377-da4b67a2281b",
-                "bcf8290c-2463-458f-9e23-dd14f07f50cc"
-              ],
-              "failures": [],
-              "pending": [],
-              "skipped": [],
-              "duration": 1,
-              "root": false,
-              "rootEmpty": false,
-              "_timeout": 2000
-            },
-            {
-              "uuid": "aa42ca15-1b69-4a5e-a997-3f07bcf76973",
-              "title": "Método GET: Buscar detalles de ventas por todos los parámetros",
-              "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\detalleVentaControlador.test.js",
-              "file": "\\tests\\detalleVentaControlador.test.js",
-              "beforeHooks": [],
-              "afterHooks": [],
-              "tests": [
-                {
-                  "title": "Debería buscar detalles de ventas exitosamente",
-                  "fullTitle": "Pruebas del controlador de detalle de ventas Método GET: Buscar detalles de ventas por todos los parámetros Debería buscar detalles de ventas exitosamente",
-                  "timedOut": false,
-                  "duration": 1,
-                  "state": "passed",
-                  "speed": "fast",
-                  "pass": true,
-                  "fail": false,
-                  "pending": false,
-                  "context": null,
-                  "code": "const searchString = 'Producto 1';\nconst mockDetalleVentas = [{ id: 1, producto: 'Producto 1', cantidad: 10 }];\nsinon.stub(DetalleVenta, 'searchAllColumns').resolves(mockDetalleVentas);\nconst req = { params: { q: searchString } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait DetalleVentaController.searchAllColumnsDetalleVentas(req, res);\nexpect(res.status.calledWith(200)).to.be.true;\nexpect(res.json.calledWith({\n    code: 200,\n    message: 'Operación exitosa',\n    data: mockDetalleVentas\n})).to.be.true;",
-                  "err": {},
-                  "uuid": "a5ca80ed-fbbb-455f-ab98-8a7d3d44d3d4",
-                  "parentUUID": "aa42ca15-1b69-4a5e-a997-3f07bcf76973",
-                  "isHook": false,
-                  "skipped": false
-                },
-                {
-                  "title": "Debería devolver un error si el parámetro \"q\" es obligatorio",
-                  "fullTitle": "Pruebas del controlador de detalle de ventas Método GET: Buscar detalles de ventas por todos los parámetros Debería devolver un error si el parámetro \"q\" es obligatorio",
-                  "timedOut": false,
-                  "duration": 1,
-                  "state": "passed",
-                  "speed": "fast",
-                  "pass": true,
-                  "fail": false,
-                  "pending": false,
-                  "context": null,
-                  "code": "const req = { params: {} };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait DetalleVentaController.searchAllColumnsDetalleVentas(req, res);\nexpect(res.status.calledWith(400)).to.be.true;\nexpect(res.json.calledWith({\n    code: 400,\n    message: \"El parámetro 'q' es obligatorio\",\n    data: null\n})).to.be.true;",
-                  "err": {},
-                  "uuid": "0ce30f9d-77e8-48ca-8c05-39a64b5b96d6",
-                  "parentUUID": "aa42ca15-1b69-4a5e-a997-3f07bcf76973",
-                  "isHook": false,
-                  "skipped": false
-                }
-              ],
-              "suites": [],
-              "passes": [
-                "a5ca80ed-fbbb-455f-ab98-8a7d3d44d3d4",
-                "0ce30f9d-77e8-48ca-8c05-39a64b5b96d6"
+                "2f597c5f-889c-426b-86de-c267a8d69cae",
+                "09d8bd3a-6bd5-4e3a-a2ee-3d1286ebef14"
               ],
               "failures": [],
               "pending": [],
@@ -615,7 +557,65 @@
               "_timeout": 2000
             },
             {
-              "uuid": "a72c68fe-34a0-4eb9-b25d-48d190e9ab03",
+              "uuid": "706bc7fa-ced7-471c-a6df-08605c30a2dd",
+              "title": "Método GET: Buscar detalles de ventas por todos los parámetros",
+              "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\detalleVentaControlador.test.js",
+              "file": "\\tests\\detalleVentaControlador.test.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Debería buscar detalles de ventas exitosamente",
+                  "fullTitle": "Pruebas del controlador de detalle de ventas Método GET: Buscar detalles de ventas por todos los parámetros Debería buscar detalles de ventas exitosamente",
+                  "timedOut": false,
+                  "duration": 2,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const searchString = 'Producto 1';\nconst mockDetalleVentas = [{ id: 1, producto: 'Producto 1', cantidad: 10 }];\nsinon.stub(DetalleVenta, 'searchAllColumns').resolves(mockDetalleVentas);\nconst req = { params: { q: searchString } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait DetalleVentaController.searchAllColumnsDetalleVentas(req, res);\nexpect(res.status.calledWith(200)).to.be.true;\nexpect(res.json.calledWith({\n    code: 200,\n    message: 'Operación exitosa',\n    data: mockDetalleVentas\n})).to.be.true;",
+                  "err": {},
+                  "uuid": "4c4052c2-a67c-47c3-bf1c-57204389a925",
+                  "parentUUID": "706bc7fa-ced7-471c-a6df-08605c30a2dd",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Debería devolver un error si el parámetro \"q\" es obligatorio",
+                  "fullTitle": "Pruebas del controlador de detalle de ventas Método GET: Buscar detalles de ventas por todos los parámetros Debería devolver un error si el parámetro \"q\" es obligatorio",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const req = { params: {} };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait DetalleVentaController.searchAllColumnsDetalleVentas(req, res);\nexpect(res.status.calledWith(400)).to.be.true;\nexpect(res.json.calledWith({\n    code: 400,\n    message: \"El parámetro 'q' es obligatorio\",\n    data: null\n})).to.be.true;",
+                  "err": {},
+                  "uuid": "2261b3ed-9cbb-4abc-a089-d3bce45fbf32",
+                  "parentUUID": "706bc7fa-ced7-471c-a6df-08605c30a2dd",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "4c4052c2-a67c-47c3-bf1c-57204389a925",
+                "2261b3ed-9cbb-4abc-a089-d3bce45fbf32"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 2,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "28670020-a27c-4b4e-ae4d-3c1b43b70b7e",
               "title": "Método POST: Crea un nuevo detalle de venta",
               "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\detalleVentaControlador.test.js",
               "file": "\\tests\\detalleVentaControlador.test.js",
@@ -626,7 +626,7 @@
                   "title": "Debería crear un detalle de venta exitosamente",
                   "fullTitle": "Pruebas del controlador de detalle de ventas Método POST: Crea un nuevo detalle de venta Debería crear un detalle de venta exitosamente",
                   "timedOut": false,
-                  "duration": 2,
+                  "duration": 1,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -635,8 +635,8 @@
                   "context": null,
                   "code": "const nuevoDetalleVenta = { id: 1, producto: 'Producto 1', cantidad: 10 };\nsinon.stub(DetalleVenta, 'create').resolves(nuevoDetalleVenta);\nconst req = { body: { producto: 'Producto 1', cantidad: 10 } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait DetalleVentaController.createDetalleVenta(req, res);\nexpect(res.status.calledWith(201)).to.be.true;\nexpect(res.json.calledWith({\n    code: 201,\n    message: 'El detalle de venta fue creado exitosamente',\n    data: nuevoDetalleVenta\n})).to.be.true;",
                   "err": {},
-                  "uuid": "e1678959-89af-423b-b059-75fb11095d29",
-                  "parentUUID": "a72c68fe-34a0-4eb9-b25d-48d190e9ab03",
+                  "uuid": "e62d9784-17a1-4e8c-8a66-ae56560411b4",
+                  "parentUUID": "28670020-a27c-4b4e-ae4d-3c1b43b70b7e",
                   "isHook": false,
                   "skipped": false
                 },
@@ -653,27 +653,27 @@
                   "context": null,
                   "code": "sinon.stub(DetalleVenta, 'create').rejects(new Error('Error al crear el detalle de venta'));\nconst req = { body: { producto: 'Producto 1', cantidad: 10 } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait DetalleVentaController.createDetalleVenta(req, res);\nexpect(res.status.calledWith(500)).to.be.true;\nexpect(res.json.calledWith({\n    code: 500,\n    message: 'Error al crear el detalle de venta',\n    data: null\n})).to.be.true;",
                   "err": {},
-                  "uuid": "744491f2-3af9-4bab-894a-8bdb19f6f7db",
-                  "parentUUID": "a72c68fe-34a0-4eb9-b25d-48d190e9ab03",
+                  "uuid": "ab001ead-8c7b-480d-b0ab-8c5baa61c597",
+                  "parentUUID": "28670020-a27c-4b4e-ae4d-3c1b43b70b7e",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "e1678959-89af-423b-b059-75fb11095d29",
-                "744491f2-3af9-4bab-894a-8bdb19f6f7db"
+                "e62d9784-17a1-4e8c-8a66-ae56560411b4",
+                "ab001ead-8c7b-480d-b0ab-8c5baa61c597"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 3,
+              "duration": 2,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "9fc0e575-8f8e-4d9d-9322-9b4ce5adb1b9",
+              "uuid": "6ee6098f-56b3-4bb0-82e3-1a19b1753789",
               "title": "Método GET: Obtiene un detalle de venta por ID",
               "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\detalleVentaControlador.test.js",
               "file": "\\tests\\detalleVentaControlador.test.js",
@@ -684,7 +684,7 @@
                   "title": "Debería obtener un detalle de venta por ID exitosamente",
                   "fullTitle": "Pruebas del controlador de detalle de ventas Método GET: Obtiene un detalle de venta por ID Debería obtener un detalle de venta por ID exitosamente",
                   "timedOut": false,
-                  "duration": 1,
+                  "duration": 2,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -693,8 +693,8 @@
                   "context": null,
                   "code": "const mockDetalleVenta = { id: 1, producto: 'Producto 1', cantidad: 10 };\nsinon.stub(DetalleVenta, 'findById').resolves(mockDetalleVenta);\nconst req = { params: { id: '1' } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait DetalleVentaController.getDetalleVentaById(req, res);\nexpect(res.status.calledWith(200)).to.be.true;\nexpect(res.json.calledWith({\n    code: 200,\n    message: 'Operación exitosa',\n    data: mockDetalleVenta\n})).to.be.true;",
                   "err": {},
-                  "uuid": "b9131a2a-10bb-4637-b391-299ce263ad47",
-                  "parentUUID": "9fc0e575-8f8e-4d9d-9322-9b4ce5adb1b9",
+                  "uuid": "e292431f-4215-4db7-a53c-5f5ebb41bf0f",
+                  "parentUUID": "6ee6098f-56b3-4bb0-82e3-1a19b1753789",
                   "isHook": false,
                   "skipped": false
                 },
@@ -702,7 +702,7 @@
                   "title": "Debería devolver un error 404 si el detalle de venta no existe",
                   "fullTitle": "Pruebas del controlador de detalle de ventas Método GET: Obtiene un detalle de venta por ID Debería devolver un error 404 si el detalle de venta no existe",
                   "timedOut": false,
-                  "duration": 0,
+                  "duration": 2,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -711,27 +711,27 @@
                   "context": null,
                   "code": "sinon.stub(DetalleVenta, 'findById').resolves(null);\nconst req = { params: { id: '999' } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait DetalleVentaController.getDetalleVentaById(req, res);\nexpect(res.status.calledWith(404)).to.be.true;\nexpect(res.json.calledWith({\n    code: 404,\n    message: 'Detalle de venta no encontrado',\n    data: null\n})).to.be.true;",
                   "err": {},
-                  "uuid": "b80fe4be-5673-4c99-9c4a-9e21d477d5f1",
-                  "parentUUID": "9fc0e575-8f8e-4d9d-9322-9b4ce5adb1b9",
+                  "uuid": "9757431c-f410-4900-a210-181d088ccfa0",
+                  "parentUUID": "6ee6098f-56b3-4bb0-82e3-1a19b1753789",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "b9131a2a-10bb-4637-b391-299ce263ad47",
-                "b80fe4be-5673-4c99-9c4a-9e21d477d5f1"
+                "e292431f-4215-4db7-a53c-5f5ebb41bf0f",
+                "9757431c-f410-4900-a210-181d088ccfa0"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 1,
+              "duration": 4,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "7dddc16f-ad89-44a0-bfb5-fc4a40c7ef99",
+              "uuid": "0fdf3dcb-b239-4f3b-9ff3-0613fb6dd8be",
               "title": "Método PUT: Actualiza un detalle de venta",
               "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\detalleVentaControlador.test.js",
               "file": "\\tests\\detalleVentaControlador.test.js",
@@ -751,8 +751,8 @@
                   "context": null,
                   "code": "const detalleVentaActualizado = { id: 1, producto: 'Producto 1', cantidad: 15 };\nsinon.stub(DetalleVenta, 'update').resolves(detalleVentaActualizado);\nconst req = { params: { id: '1' }, body: { producto: 'Producto 1', cantidad: 15 } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait DetalleVentaController.updateDetalleVenta(req, res);\nexpect(res.status.calledWith(200)).to.be.true;\nexpect(res.json.calledWith({\n    code: 200,\n    message: 'El Detalle de venta fue actualizado exitosamente',\n    data: detalleVentaActualizado\n})).to.be.true;",
                   "err": {},
-                  "uuid": "0d3f5be6-e774-4bd3-b940-b35ddf0b5974",
-                  "parentUUID": "7dddc16f-ad89-44a0-bfb5-fc4a40c7ef99",
+                  "uuid": "7150bcb5-4565-423a-af3e-6b465ad76b17",
+                  "parentUUID": "0fdf3dcb-b239-4f3b-9ff3-0613fb6dd8be",
                   "isHook": false,
                   "skipped": false
                 },
@@ -769,16 +769,16 @@
                   "context": null,
                   "code": "sinon.stub(DetalleVenta, 'update').resolves(null);\nconst req = { params: { id: '999' }, body: { producto: 'Producto 1', cantidad: 15 } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait DetalleVentaController.updateDetalleVenta(req, res);\nexpect(res.status.calledWith(404)).to.be.true;\nexpect(res.json.calledWith({\n    code: 404,\n    message: 'El Detalle de venta no fue encontrado',\n    data: null\n})).to.be.true;",
                   "err": {},
-                  "uuid": "eda5edf5-860b-479c-9bc5-48548e7d17d6",
-                  "parentUUID": "7dddc16f-ad89-44a0-bfb5-fc4a40c7ef99",
+                  "uuid": "f1998c38-5ae3-40a1-8541-a06e95761617",
+                  "parentUUID": "0fdf3dcb-b239-4f3b-9ff3-0613fb6dd8be",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "0d3f5be6-e774-4bd3-b940-b35ddf0b5974",
-                "eda5edf5-860b-479c-9bc5-48548e7d17d6"
+                "7150bcb5-4565-423a-af3e-6b465ad76b17",
+                "f1998c38-5ae3-40a1-8541-a06e95761617"
               ],
               "failures": [],
               "pending": [],
@@ -789,7 +789,7 @@
               "_timeout": 2000
             },
             {
-              "uuid": "aa5aae2c-eff9-4e91-a6db-dab87151d3b0",
+              "uuid": "4d52bd88-181f-43be-a71c-31789b246da0",
               "title": "Método DELETE: Elimina un detalle de venta",
               "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\detalleVentaControlador.test.js",
               "file": "\\tests\\detalleVentaControlador.test.js",
@@ -809,8 +809,8 @@
                   "context": null,
                   "code": "const detalleVentaEliminado = { id: 1, producto: 'Producto 1', cantidad: 10 };\nsinon.stub(DetalleVenta, 'delete').resolves(detalleVentaEliminado);\nconst req = { params: { id: '1' } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait DetalleVentaController.deleteDetalleVenta(req, res);\nexpect(res.status.calledWith(200)).to.be.true;\nexpect(res.json.calledWith({\n    code: 200,\n    message: 'Detalle de venta eliminado exitosamente',\n    data: null\n})).to.be.true;",
                   "err": {},
-                  "uuid": "7bc76f84-65a7-48b1-942c-a9a811691b15",
-                  "parentUUID": "aa5aae2c-eff9-4e91-a6db-dab87151d3b0",
+                  "uuid": "8195168c-f937-4f03-ad45-ba1762a04b13",
+                  "parentUUID": "4d52bd88-181f-43be-a71c-31789b246da0",
                   "isHook": false,
                   "skipped": false
                 },
@@ -818,7 +818,7 @@
                   "title": "Debería devolver un error 404 si el detalle de venta no existe",
                   "fullTitle": "Pruebas del controlador de detalle de ventas Método DELETE: Elimina un detalle de venta Debería devolver un error 404 si el detalle de venta no existe",
                   "timedOut": false,
-                  "duration": 0,
+                  "duration": 1,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -827,27 +827,27 @@
                   "context": null,
                   "code": "sinon.stub(DetalleVenta, 'delete').resolves(false);\nconst req = { params: { id: '999' } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait DetalleVentaController.deleteDetalleVenta(req, res);\nexpect(res.status.calledWith(404)).to.be.true;\nexpect(res.json.calledWith({\n    code: 404,\n    message: 'Detalle de venta no encontrado',\n    data: null\n})).to.be.true;",
                   "err": {},
-                  "uuid": "3a69254c-cf08-482b-926d-955a7077655f",
-                  "parentUUID": "aa5aae2c-eff9-4e91-a6db-dab87151d3b0",
+                  "uuid": "30ec0c91-10e0-46de-b927-c42469d168e8",
+                  "parentUUID": "4d52bd88-181f-43be-a71c-31789b246da0",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "7bc76f84-65a7-48b1-942c-a9a811691b15",
-                "3a69254c-cf08-482b-926d-955a7077655f"
+                "8195168c-f937-4f03-ad45-ba1762a04b13",
+                "30ec0c91-10e0-46de-b927-c42469d168e8"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 1,
+              "duration": 2,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "90370115-3254-4d42-90c9-9eca5a702bc7",
+              "uuid": "82bb6a7b-40ca-43ae-951c-2a3fe0384eb9",
               "title": "Método GET: Descargar detalle de ventas en Excel",
               "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\detalleVentaControlador.test.js",
               "file": "\\tests\\detalleVentaControlador.test.js",
@@ -858,7 +858,7 @@
                   "title": "Debería generar y descargar el archivo Excel exitosamente",
                   "fullTitle": "Pruebas del controlador de detalle de ventas Método GET: Descargar detalle de ventas en Excel Debería generar y descargar el archivo Excel exitosamente",
                   "timedOut": false,
-                  "duration": 2,
+                  "duration": 1,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -867,8 +867,8 @@
                   "context": null,
                   "code": "const mockDetalleVentas = [\n    { id: 1, producto: 'Producto 1', cantidad: 10 },\n    { id: 2, producto: 'Producto 2', cantidad: 20 }\n];\nsinon.stub(DetalleVenta, 'generarExcel').resolves(mockDetalleVentas);\nsinon.stub(excel, 'write').returns(Buffer.from('test'));\nconst req = {};\nconst res = {\n    setHeader: sinon.stub(),\n    send: sinon.stub()\n};\nawait DetalleVentaController.downloadDetalleVentasExcel(req, res);\nexpect(res.setHeader.calledWith('Content-Disposition', 'attachment; filename=detalle_ventas.xlsx')).to.be.true;\nexpect(res.setHeader.calledWith('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')).to.be.true;\nexpect(res.send.calledOnce).to.be.true;",
                   "err": {},
-                  "uuid": "bf2aff87-1a7b-4d51-a0cb-2c5b3dad2eb3",
-                  "parentUUID": "90370115-3254-4d42-90c9-9eca5a702bc7",
+                  "uuid": "406cc3c4-8e83-430a-84f5-0d242c695405",
+                  "parentUUID": "82bb6a7b-40ca-43ae-951c-2a3fe0384eb9",
                   "isHook": false,
                   "skipped": false
                 },
@@ -885,21 +885,21 @@
                   "context": null,
                   "code": "sinon.stub(DetalleVenta, 'generarExcel').rejects(new Error('Error al generar el archivo Excel'));\nconst req = {};\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait DetalleVentaController.downloadDetalleVentasExcel(req, res);\nexpect(res.status.calledWith(500)).to.be.true;\nexpect(res.json.calledWith({\n    code: 500,\n    message: 'Error al generar el archivo Excel.',\n    data: null\n})).to.be.true;",
                   "err": {},
-                  "uuid": "9e27154c-ced2-48c6-b57d-6bd80801243f",
-                  "parentUUID": "90370115-3254-4d42-90c9-9eca5a702bc7",
+                  "uuid": "0a782eac-7339-4564-b240-8b00ada32c48",
+                  "parentUUID": "82bb6a7b-40ca-43ae-951c-2a3fe0384eb9",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "bf2aff87-1a7b-4d51-a0cb-2c5b3dad2eb3",
-                "9e27154c-ced2-48c6-b57d-6bd80801243f"
+                "406cc3c4-8e83-430a-84f5-0d242c695405",
+                "0a782eac-7339-4564-b240-8b00ada32c48"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 4,
+              "duration": 3,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
@@ -915,7 +915,7 @@
           "_timeout": 2000
         },
         {
-          "uuid": "d4c33d31-80b2-489d-aaa8-b5461970ac1f",
+          "uuid": "72b07fb7-4b2b-4a0b-a5e1-2a2bde825849",
           "title": "Pruebas del controlador de empleados",
           "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\empleadosController.test.js",
           "file": "\\tests\\empleadosController.test.js",
@@ -934,8 +934,8 @@
               "context": null,
               "code": "sinon.restore();",
               "err": {},
-              "uuid": "84052dcf-5c67-4f5d-9267-01cee9f1d68d",
-              "parentUUID": "d4c33d31-80b2-489d-aaa8-b5461970ac1f",
+              "uuid": "7d57ad56-134b-4120-8bd3-b20fd8c96573",
+              "parentUUID": "72b07fb7-4b2b-4a0b-a5e1-2a2bde825849",
               "isHook": true,
               "skipped": false
             }
@@ -943,7 +943,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "8e6e1b8c-3ff2-4991-961f-723d7e74c91a",
+              "uuid": "8d940425-2499-4d1b-acdc-bc8466cb8ad9",
               "title": "Método GET: Obtener todos los empleados",
               "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\empleadosController.test.js",
               "file": "\\tests\\empleadosController.test.js",
@@ -963,8 +963,8 @@
                   "context": null,
                   "code": "const mockEmpleados = [\n    { id: 1, nombre: 'Juan', apellido: 'Pérez' },\n    { id: 2, nombre: 'Ana', apellido: 'Gómez' }\n];\nsinon.stub(Empleado, 'findAll').resolves(mockEmpleados);\nconst req = {};\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait EmpleadoController.getAllEmpleados(req, res);\nexpect(res.status.calledWith(200)).to.be.true;\nexpect(res.json.calledWith({\n    code: 200,\n    message: 'Operación exitosa',\n    data: mockEmpleados\n})).to.be.true;",
                   "err": {},
-                  "uuid": "3b46c398-44fc-4010-ac03-c66326963440",
-                  "parentUUID": "8e6e1b8c-3ff2-4991-961f-723d7e74c91a",
+                  "uuid": "55f70d25-865d-4ff2-9839-b6d6d1e03560",
+                  "parentUUID": "8d940425-2499-4d1b-acdc-bc8466cb8ad9",
                   "isHook": false,
                   "skipped": false
                 },
@@ -981,16 +981,16 @@
                   "context": null,
                   "code": "sinon.stub(Empleado, 'findAll').rejects(new Error('Error de base de datos'));\nconst req = {};\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait EmpleadoController.getAllEmpleados(req, res);\nexpect(res.status.calledWith(500)).to.be.true;\nexpect(res.json.calledWith({\n    code: 500,\n    message: 'Error de base de datos',\n    data: null\n})).to.be.true;",
                   "err": {},
-                  "uuid": "00e42f80-9374-4c8c-92dc-1acd21ced918",
-                  "parentUUID": "8e6e1b8c-3ff2-4991-961f-723d7e74c91a",
+                  "uuid": "3c1f215e-a29d-4a61-ac3a-503a421aa124",
+                  "parentUUID": "8d940425-2499-4d1b-acdc-bc8466cb8ad9",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "3b46c398-44fc-4010-ac03-c66326963440",
-                "00e42f80-9374-4c8c-92dc-1acd21ced918"
+                "55f70d25-865d-4ff2-9839-b6d6d1e03560",
+                "3c1f215e-a29d-4a61-ac3a-503a421aa124"
               ],
               "failures": [],
               "pending": [],
@@ -1001,7 +1001,7 @@
               "_timeout": 2000
             },
             {
-              "uuid": "acbb68af-99db-4ea0-9c27-b6f2f387d927",
+              "uuid": "9544f31e-4cdd-48f4-8f3f-82524aa58408",
               "title": "Método GET: Buscar empleados por todos los parámetros",
               "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\empleadosController.test.js",
               "file": "\\tests\\empleadosController.test.js",
@@ -1012,7 +1012,7 @@
                   "title": "Debería buscar empleados exitosamente",
                   "fullTitle": "Pruebas del controlador de empleados Método GET: Buscar empleados por todos los parámetros Debería buscar empleados exitosamente",
                   "timedOut": false,
-                  "duration": 1,
+                  "duration": 2,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -1021,8 +1021,8 @@
                   "context": null,
                   "code": "const searchString = 'Juan';\nconst mockEmpleados = [{ id: 1, nombre: 'Juan', apellido: 'Pérez' }];\nsinon.stub(Empleado, 'searchAllColumns').resolves(mockEmpleados);\nconst req = { params: { q: searchString } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait EmpleadoController.searchAllColumns(req, res);\nexpect(res.status.calledWith(200)).to.be.true;\nexpect(res.json.calledWith({\n    code: 200,\n    message: 'Operación exitosa',\n    data: mockEmpleados\n})).to.be.true;",
                   "err": {},
-                  "uuid": "d114742a-cfe4-4b88-a889-86bc2223b9f6",
-                  "parentUUID": "acbb68af-99db-4ea0-9c27-b6f2f387d927",
+                  "uuid": "392d3223-6d02-43c9-a6e0-8ae87ec84e46",
+                  "parentUUID": "9544f31e-4cdd-48f4-8f3f-82524aa58408",
                   "isHook": false,
                   "skipped": false
                 },
@@ -1030,7 +1030,7 @@
                   "title": "Debería devolver un error si el parámetro \"q\" es obligatorio",
                   "fullTitle": "Pruebas del controlador de empleados Método GET: Buscar empleados por todos los parámetros Debería devolver un error si el parámetro \"q\" es obligatorio",
                   "timedOut": false,
-                  "duration": 0,
+                  "duration": 1,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -1039,27 +1039,27 @@
                   "context": null,
                   "code": "const req = { params: {} };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait EmpleadoController.searchAllColumns(req, res);\nexpect(res.status.calledWith(400)).to.be.true;\nexpect(res.json.calledWith({\n    code: 400,\n    message: \"El parámetro 'q' es obligatorio\",\n    data: null\n})).to.be.true;",
                   "err": {},
-                  "uuid": "be0dc31a-2808-48b9-9d5e-ef6b45e623b8",
-                  "parentUUID": "acbb68af-99db-4ea0-9c27-b6f2f387d927",
+                  "uuid": "57d91859-14c6-41ab-90cd-4832669fd96a",
+                  "parentUUID": "9544f31e-4cdd-48f4-8f3f-82524aa58408",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "d114742a-cfe4-4b88-a889-86bc2223b9f6",
-                "be0dc31a-2808-48b9-9d5e-ef6b45e623b8"
+                "392d3223-6d02-43c9-a6e0-8ae87ec84e46",
+                "57d91859-14c6-41ab-90cd-4832669fd96a"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 1,
+              "duration": 3,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "623aadf8-f0fd-4c06-8da4-5cc1d0997633",
+              "uuid": "367cb7e9-3792-4dcd-837f-d6408f5830c8",
               "title": "Método POST: Crear un nuevo empleado",
               "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\empleadosController.test.js",
               "file": "\\tests\\empleadosController.test.js",
@@ -1079,8 +1079,8 @@
                   "context": null,
                   "code": "const nuevoEmpleado = { id: 1, nombre: 'Juan', apellido: 'Pérez' };\nsinon.stub(Empleado, 'create').resolves(nuevoEmpleado);\nconst req = { body: { nombre: 'Juan', apellido: 'Pérez' } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait EmpleadoController.createEmpleado(req, res);\nexpect(res.status.calledWith(201)).to.be.true;\nexpect(res.json.calledWith({\n    code: 201,\n    message: 'Empleado creado exitosamente',\n    data: nuevoEmpleado\n})).to.be.true;",
                   "err": {},
-                  "uuid": "9fab1304-6a2a-4b4f-b1c6-65342933434d",
-                  "parentUUID": "623aadf8-f0fd-4c06-8da4-5cc1d0997633",
+                  "uuid": "3a810c24-688b-4aa2-8a14-84714497cb0d",
+                  "parentUUID": "367cb7e9-3792-4dcd-837f-d6408f5830c8",
                   "isHook": false,
                   "skipped": false
                 },
@@ -1097,16 +1097,16 @@
                   "context": null,
                   "code": "sinon.stub(Empleado, 'create').rejects(new Error('Error al crear el empleado'));\nconst req = { body: { nombre: 'Juan', apellido: 'Pérez' } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait EmpleadoController.createEmpleado(req, res);\nexpect(res.status.calledWith(500)).to.be.true;\nexpect(res.json.calledWith({\n    code: 500,\n    message: 'Error al crear el empleado',\n    data: null\n})).to.be.true;",
                   "err": {},
-                  "uuid": "86281552-a417-49cb-8135-9815eb16470a",
-                  "parentUUID": "623aadf8-f0fd-4c06-8da4-5cc1d0997633",
+                  "uuid": "52550a08-54f1-4054-b2ad-d6e8c56a690f",
+                  "parentUUID": "367cb7e9-3792-4dcd-837f-d6408f5830c8",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "9fab1304-6a2a-4b4f-b1c6-65342933434d",
-                "86281552-a417-49cb-8135-9815eb16470a"
+                "3a810c24-688b-4aa2-8a14-84714497cb0d",
+                "52550a08-54f1-4054-b2ad-d6e8c56a690f"
               ],
               "failures": [],
               "pending": [],
@@ -1117,7 +1117,7 @@
               "_timeout": 2000
             },
             {
-              "uuid": "7bb34e37-d571-4a8f-81c0-21bf70b13e4e",
+              "uuid": "3f2e719c-2304-4aca-bfff-83f291ca3244",
               "title": "Método GET: Obtener un empleado por ID",
               "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\empleadosController.test.js",
               "file": "\\tests\\empleadosController.test.js",
@@ -1137,8 +1137,8 @@
                   "context": null,
                   "code": "const mockEmpleado = { id: 1, nombre: 'Juan', apellido: 'Pérez' };\nsinon.stub(Empleado, 'findById').resolves(mockEmpleado);\nconst req = { params: { id: '1' } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait EmpleadoController.getEmpleadoById(req, res);\nexpect(res.status.calledWith(200)).to.be.true;\nexpect(res.json.calledWith({\n    code: 200,\n    message: 'Operación exitosa',\n    data: mockEmpleado\n})).to.be.true;",
                   "err": {},
-                  "uuid": "44f2cffb-6525-4d86-b2f8-6c1886860f3d",
-                  "parentUUID": "7bb34e37-d571-4a8f-81c0-21bf70b13e4e",
+                  "uuid": "aa027b5f-a9d3-4022-b099-5aaadb750849",
+                  "parentUUID": "3f2e719c-2304-4aca-bfff-83f291ca3244",
                   "isHook": false,
                   "skipped": false
                 },
@@ -1146,7 +1146,7 @@
                   "title": "Debería devolver un error 404 si el empleado no existe",
                   "fullTitle": "Pruebas del controlador de empleados Método GET: Obtener un empleado por ID Debería devolver un error 404 si el empleado no existe",
                   "timedOut": false,
-                  "duration": 1,
+                  "duration": 2,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -1155,27 +1155,27 @@
                   "context": null,
                   "code": "sinon.stub(Empleado, 'findById').resolves(null);\nconst req = { params: { id: '999' } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait EmpleadoController.getEmpleadoById(req, res);\nexpect(res.status.calledWith(404)).to.be.true;\nexpect(res.json.calledWith({\n    code: 404,\n    message: 'Empleado no encontrado',\n    data: null\n})).to.be.true;",
                   "err": {},
-                  "uuid": "874d1a8d-4743-47e6-87e7-cc44d3ac7026",
-                  "parentUUID": "7bb34e37-d571-4a8f-81c0-21bf70b13e4e",
+                  "uuid": "9b00ee38-d6f8-4ce0-b5c8-11a8e00c8563",
+                  "parentUUID": "3f2e719c-2304-4aca-bfff-83f291ca3244",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "44f2cffb-6525-4d86-b2f8-6c1886860f3d",
-                "874d1a8d-4743-47e6-87e7-cc44d3ac7026"
+                "aa027b5f-a9d3-4022-b099-5aaadb750849",
+                "9b00ee38-d6f8-4ce0-b5c8-11a8e00c8563"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 2,
+              "duration": 3,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "af5064bb-d2da-4f70-8335-144e69dc9b85",
+              "uuid": "35b71b2b-181a-4fc6-a648-f5d833951c11",
               "title": "Método PUT: Actualizar un empleado",
               "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\empleadosController.test.js",
               "file": "\\tests\\empleadosController.test.js",
@@ -1186,7 +1186,7 @@
                   "title": "Debería actualizar un empleado exitosamente",
                   "fullTitle": "Pruebas del controlador de empleados Método PUT: Actualizar un empleado Debería actualizar un empleado exitosamente",
                   "timedOut": false,
-                  "duration": 0,
+                  "duration": 1,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -1195,8 +1195,8 @@
                   "context": null,
                   "code": "const empleadoActualizado = { id: 1, nombre: 'Juan', apellido: 'Pérez' };\nsinon.stub(Empleado, 'update').resolves(empleadoActualizado);\nconst req = { params: { id: '1' }, body: { nombre: 'Juan', apellido: 'Pérez' } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait EmpleadoController.updateEmpleado(req, res);\nexpect(res.status.calledWith(200)).to.be.true;\nexpect(res.json.calledWith({\n    code: 200,\n    message: 'Empleado actualizado exitosamente',\n    data: empleadoActualizado\n})).to.be.true;",
                   "err": {},
-                  "uuid": "3bde8b5f-c4e9-4d42-9a3b-b0f250431666",
-                  "parentUUID": "af5064bb-d2da-4f70-8335-144e69dc9b85",
+                  "uuid": "78e76f0a-176e-4854-9177-b42f3e7341cf",
+                  "parentUUID": "35b71b2b-181a-4fc6-a648-f5d833951c11",
                   "isHook": false,
                   "skipped": false
                 },
@@ -1204,7 +1204,7 @@
                   "title": "Debería devolver un error 404 si el empleado no existe",
                   "fullTitle": "Pruebas del controlador de empleados Método PUT: Actualizar un empleado Debería devolver un error 404 si el empleado no existe",
                   "timedOut": false,
-                  "duration": 0,
+                  "duration": 1,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -1213,27 +1213,27 @@
                   "context": null,
                   "code": "sinon.stub(Empleado, 'update').resolves(null);\nconst req = { params: { id: '999' }, body: { nombre: 'Juan', apellido: 'Pérez' } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait EmpleadoController.updateEmpleado(req, res);\nexpect(res.status.calledWith(404)).to.be.true;\nexpect(res.json.calledWith({\n    code: 404,\n    message: 'Empleado no encontrado',\n    data: null\n})).to.be.true;",
                   "err": {},
-                  "uuid": "4c281cca-c18e-4369-9d49-31b1e0056997",
-                  "parentUUID": "af5064bb-d2da-4f70-8335-144e69dc9b85",
+                  "uuid": "e5dcc35e-d3f2-498d-a8f5-14a967f0a402",
+                  "parentUUID": "35b71b2b-181a-4fc6-a648-f5d833951c11",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "3bde8b5f-c4e9-4d42-9a3b-b0f250431666",
-                "4c281cca-c18e-4369-9d49-31b1e0056997"
+                "78e76f0a-176e-4854-9177-b42f3e7341cf",
+                "e5dcc35e-d3f2-498d-a8f5-14a967f0a402"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 0,
+              "duration": 2,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "edbb2b78-c6dc-451d-b73f-7f44455f9f60",
+              "uuid": "bb5af656-5991-41ab-aeda-c0fab46d824a",
               "title": "Método DELETE: Eliminar un empleado",
               "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\empleadosController.test.js",
               "file": "\\tests\\empleadosController.test.js",
@@ -1253,8 +1253,8 @@
                   "context": null,
                   "code": "const empleadoEliminado = { id: 1, nombre: 'Juan', apellido: 'Pérez' };\nsinon.stub(Empleado, 'delete').resolves(empleadoEliminado);\nconst req = { params: { id: '1' } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait EmpleadoController.deleteEmpleado(req, res);\nexpect(res.status.calledWith(200)).to.be.true;\nexpect(res.json.calledWith({\n    code: 200,\n    message: 'Empleado eliminado exitosamente',\n    data: null\n})).to.be.true;",
                   "err": {},
-                  "uuid": "bab26854-f9a3-4b7b-9fc4-2761db028331",
-                  "parentUUID": "edbb2b78-c6dc-451d-b73f-7f44455f9f60",
+                  "uuid": "3e220962-3ed6-4235-83a1-ded1b9eaf397",
+                  "parentUUID": "bb5af656-5991-41ab-aeda-c0fab46d824a",
                   "isHook": false,
                   "skipped": false
                 },
@@ -1262,7 +1262,7 @@
                   "title": "Debería devolver un error 404 si el empleado no existe",
                   "fullTitle": "Pruebas del controlador de empleados Método DELETE: Eliminar un empleado Debería devolver un error 404 si el empleado no existe",
                   "timedOut": false,
-                  "duration": 0,
+                  "duration": 2,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -1271,27 +1271,27 @@
                   "context": null,
                   "code": "sinon.stub(Empleado, 'delete').resolves(false);\nconst req = { params: { id: '999' } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait EmpleadoController.deleteEmpleado(req, res);\nexpect(res.status.calledWith(404)).to.be.true;\nexpect(res.json.calledWith({\n    code: 404,\n    message: 'Empleado no encontrado',\n    data: null\n})).to.be.true;",
                   "err": {},
-                  "uuid": "442f72c4-51af-4f11-8e5e-59fb38aef669",
-                  "parentUUID": "edbb2b78-c6dc-451d-b73f-7f44455f9f60",
+                  "uuid": "bb939e60-ccfa-4f22-a3e8-281aefc54be4",
+                  "parentUUID": "bb5af656-5991-41ab-aeda-c0fab46d824a",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "bab26854-f9a3-4b7b-9fc4-2761db028331",
-                "442f72c4-51af-4f11-8e5e-59fb38aef669"
+                "3e220962-3ed6-4235-83a1-ded1b9eaf397",
+                "bb939e60-ccfa-4f22-a3e8-281aefc54be4"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 1,
+              "duration": 3,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "3e02e984-1fd2-43ef-8f08-a950ba2614ca",
+              "uuid": "adfddfd6-1c7e-4cee-b79f-103a2ccdce79",
               "title": "Método GET: Descargar empleados en Excel",
               "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\empleadosController.test.js",
               "file": "\\tests\\empleadosController.test.js",
@@ -1311,8 +1311,8 @@
                   "context": null,
                   "code": "const mockEmpleados = [\n    { id: 1, nombre: 'Juan', apellido: 'Pérez' },\n    { id: 2, nombre: 'Ana', apellido: 'Gómez' }\n];\nsinon.stub(Empleado, 'generarExcel').resolves(mockEmpleados);\nsinon.stub(excel, 'write').returns(Buffer.from('test'));\nconst req = {};\nconst res = {\n    setHeader: sinon.stub(),\n    send: sinon.stub()\n};\nawait EmpleadoController.downloadEmpleadosExcel(req, res);\nexpect(res.setHeader.calledWith('Content-Disposition', 'attachment; filename=empleados.xlsx')).to.be.true;\nexpect(res.setHeader.calledWith('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')).to.be.true;\nexpect(res.send.calledOnce).to.be.true;",
                   "err": {},
-                  "uuid": "63d6be0e-43c7-4e92-a529-6a4bdc7ad267",
-                  "parentUUID": "3e02e984-1fd2-43ef-8f08-a950ba2614ca",
+                  "uuid": "41acddf0-2365-43a9-9264-70f799526210",
+                  "parentUUID": "adfddfd6-1c7e-4cee-b79f-103a2ccdce79",
                   "isHook": false,
                   "skipped": false
                 },
@@ -1320,7 +1320,7 @@
                   "title": "Debería manejar errores al generar el archivo Excel",
                   "fullTitle": "Pruebas del controlador de empleados Método GET: Descargar empleados en Excel Debería manejar errores al generar el archivo Excel",
                   "timedOut": false,
-                  "duration": 3,
+                  "duration": 2,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -1329,21 +1329,21 @@
                   "context": null,
                   "code": "sinon.stub(Empleado, 'generarExcel').rejects(new Error('Error al generar el archivo Excel'));\nconst req = {};\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait EmpleadoController.downloadEmpleadosExcel(req, res);\nexpect(res.status.calledWith(500)).to.be.true;\nexpect(res.json.calledWith({\n    code: 500,\n    message: 'Error al generar el archivo Excel.',\n    data: null\n})).to.be.true;",
                   "err": {},
-                  "uuid": "ab6cdc5e-f7ad-4eae-8755-fe0c5d5a0717",
-                  "parentUUID": "3e02e984-1fd2-43ef-8f08-a950ba2614ca",
+                  "uuid": "00569405-7870-461e-9d07-ad84e87a8ba0",
+                  "parentUUID": "adfddfd6-1c7e-4cee-b79f-103a2ccdce79",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "63d6be0e-43c7-4e92-a529-6a4bdc7ad267",
-                "ab6cdc5e-f7ad-4eae-8755-fe0c5d5a0717"
+                "41acddf0-2365-43a9-9264-70f799526210",
+                "00569405-7870-461e-9d07-ad84e87a8ba0"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 4,
+              "duration": 3,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
@@ -1359,7 +1359,7 @@
           "_timeout": 2000
         },
         {
-          "uuid": "b8d26f0a-d3a4-47f3-b4b1-381115491488",
+          "uuid": "853f6cf6-25e3-4649-a464-0b5b8679f12c",
           "title": "Pruebas del controlador de inventarios",
           "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\inventarioController.test.js",
           "file": "\\tests\\inventarioController.test.js",
@@ -1378,8 +1378,8 @@
               "context": null,
               "code": "sinon.restore();",
               "err": {},
-              "uuid": "7dbafa8a-1ffa-481e-9004-16fd73276756",
-              "parentUUID": "b8d26f0a-d3a4-47f3-b4b1-381115491488",
+              "uuid": "e190fc89-1cd9-436b-8397-c6aee619dbe4",
+              "parentUUID": "853f6cf6-25e3-4649-a464-0b5b8679f12c",
               "isHook": true,
               "skipped": false
             }
@@ -1387,7 +1387,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "fa8ae884-96d4-4663-b8c9-43e4c866340f",
+              "uuid": "d579abd6-67d4-46cd-a45f-e32abf87b834",
               "title": "Método GET: Obtiene todos los inventarios",
               "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\inventarioController.test.js",
               "file": "\\tests\\inventarioController.test.js",
@@ -1407,8 +1407,8 @@
                   "context": null,
                   "code": "const mockInventarios = [\n    { id: 1, nombre: 'Producto 1', cantidad: 10 },\n    { id: 2, nombre: 'Producto 2', cantidad: 20 }\n];\nsinon.stub(Inventario, 'findAll').resolves(mockInventarios);\nconst req = {};\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait InventarioController.getAllInventario(req, res);\nexpect(res.status.calledWith(200)).to.be.true;\nexpect(res.json.calledWith({\n    code: 200,\n    message: 'Operación exitosa',\n    data: mockInventarios\n})).to.be.true;",
                   "err": {},
-                  "uuid": "9dd66035-b2e7-45c3-b385-2710d4f41dcd",
-                  "parentUUID": "fa8ae884-96d4-4663-b8c9-43e4c866340f",
+                  "uuid": "39cf3aba-aabf-4fa5-a4dc-e759f6c0e8eb",
+                  "parentUUID": "d579abd6-67d4-46cd-a45f-e32abf87b834",
                   "isHook": false,
                   "skipped": false
                 },
@@ -1425,16 +1425,16 @@
                   "context": null,
                   "code": "sinon.stub(Inventario, 'findAll').rejects(new Error('Error de base de datos'));\nconst req = {};\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait InventarioController.getAllInventario(req, res);\nexpect(res.status.calledWith(500)).to.be.true;\nexpect(res.json.calledWith({\n    code: 500,\n    message: 'Error de base de datos',\n    data: null\n})).to.be.true;",
                   "err": {},
-                  "uuid": "c3b22b6e-b0fc-4ccf-a8c8-1611e651b7ae",
-                  "parentUUID": "fa8ae884-96d4-4663-b8c9-43e4c866340f",
+                  "uuid": "9fdcebc5-8cf9-429a-a4e3-33bf64b82d45",
+                  "parentUUID": "d579abd6-67d4-46cd-a45f-e32abf87b834",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "9dd66035-b2e7-45c3-b385-2710d4f41dcd",
-                "c3b22b6e-b0fc-4ccf-a8c8-1611e651b7ae"
+                "39cf3aba-aabf-4fa5-a4dc-e759f6c0e8eb",
+                "9fdcebc5-8cf9-429a-a4e3-33bf64b82d45"
               ],
               "failures": [],
               "pending": [],
@@ -1445,7 +1445,7 @@
               "_timeout": 2000
             },
             {
-              "uuid": "40ae9494-7988-4672-b5d9-a07284407ded",
+              "uuid": "722dd229-a264-4a2f-b113-279c93629354",
               "title": "Método GET: Buscar inventarios por todos los parámetros",
               "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\inventarioController.test.js",
               "file": "\\tests\\inventarioController.test.js",
@@ -1465,8 +1465,8 @@
                   "context": null,
                   "code": "const searchString = 'Producto';\nconst mockInventarios = [{ id: 1, nombre: 'Producto 1', cantidad: 10 }];\nsinon.stub(Inventario, 'searchAllColumns').resolves(mockInventarios);\nconst req = { params: { q: searchString } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait InventarioController.searchAllColumns(req, res);\nexpect(res.status.calledWith(200)).to.be.true;\nexpect(res.json.calledWith({\n    code: 200,\n    message: 'Operación exitosa',\n    data: mockInventarios\n})).to.be.true;",
                   "err": {},
-                  "uuid": "553fd1f9-a7e4-4432-bd4b-c703aa19a9c2",
-                  "parentUUID": "40ae9494-7988-4672-b5d9-a07284407ded",
+                  "uuid": "1422d6b5-28ec-49bf-9288-689c0fa5ebfe",
+                  "parentUUID": "722dd229-a264-4a2f-b113-279c93629354",
                   "isHook": false,
                   "skipped": false
                 },
@@ -1483,16 +1483,16 @@
                   "context": null,
                   "code": "const req = { params: {} };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait InventarioController.searchAllColumns(req, res);\nexpect(res.status.calledWith(400)).to.be.true;\nexpect(res.json.calledWith({\n    code: 400,\n    message: \"El parámetro 'q' es obligatorio\",\n    data: null\n})).to.be.true;",
                   "err": {},
-                  "uuid": "0b925492-c1ab-4d12-8bdf-551bd7f451ca",
-                  "parentUUID": "40ae9494-7988-4672-b5d9-a07284407ded",
+                  "uuid": "bdb24bd5-7a0c-42c4-96eb-1294035137d6",
+                  "parentUUID": "722dd229-a264-4a2f-b113-279c93629354",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "553fd1f9-a7e4-4432-bd4b-c703aa19a9c2",
-                "0b925492-c1ab-4d12-8bdf-551bd7f451ca"
+                "1422d6b5-28ec-49bf-9288-689c0fa5ebfe",
+                "bdb24bd5-7a0c-42c4-96eb-1294035137d6"
               ],
               "failures": [],
               "pending": [],
@@ -1503,7 +1503,7 @@
               "_timeout": 2000
             },
             {
-              "uuid": "31c5d5a3-3b03-481d-8fee-05a9c2bddd5c",
+              "uuid": "af4302e1-e281-4347-95fe-6c5587844c4d",
               "title": "Método POST: Crea un nuevo inventario",
               "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\inventarioController.test.js",
               "file": "\\tests\\inventarioController.test.js",
@@ -1523,8 +1523,8 @@
                   "context": null,
                   "code": "const nuevoInventario = { id: 1, nombre: 'Producto 1', cantidad: 10 };\nsinon.stub(Inventario, 'create').resolves(nuevoInventario);\nconst req = { body: { nombre: 'Producto 1', cantidad: 10 } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait InventarioController.createInventario(req, res);\nexpect(res.status.calledWith(201)).to.be.true;\nexpect(res.json.calledWith({\n    code: 201,\n    message: 'Inventario creado exitosamente',\n    data: nuevoInventario\n})).to.be.true;",
                   "err": {},
-                  "uuid": "67bdb9e9-0e2c-49d1-bc49-fa24575bd07f",
-                  "parentUUID": "31c5d5a3-3b03-481d-8fee-05a9c2bddd5c",
+                  "uuid": "bff0cb13-c112-46f8-ae34-24d54d11fd50",
+                  "parentUUID": "af4302e1-e281-4347-95fe-6c5587844c4d",
                   "isHook": false,
                   "skipped": false
                 },
@@ -1541,16 +1541,16 @@
                   "context": null,
                   "code": "sinon.stub(Inventario, 'create').rejects(new Error('Error al crear el inventario'));\nconst req = { body: { nombre: 'Producto 1', cantidad: 10 } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait InventarioController.createInventario(req, res);\nexpect(res.status.calledWith(500)).to.be.true;\nexpect(res.json.calledWith({\n    code: 500,\n    message: 'Error al crear el inventario',\n    data: null\n})).to.be.true;",
                   "err": {},
-                  "uuid": "81b0374e-3e9c-4313-a9e6-e350d23b546a",
-                  "parentUUID": "31c5d5a3-3b03-481d-8fee-05a9c2bddd5c",
+                  "uuid": "74f205cd-8f43-4799-bd5e-307e242d21d4",
+                  "parentUUID": "af4302e1-e281-4347-95fe-6c5587844c4d",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "67bdb9e9-0e2c-49d1-bc49-fa24575bd07f",
-                "81b0374e-3e9c-4313-a9e6-e350d23b546a"
+                "bff0cb13-c112-46f8-ae34-24d54d11fd50",
+                "74f205cd-8f43-4799-bd5e-307e242d21d4"
               ],
               "failures": [],
               "pending": [],
@@ -1561,7 +1561,7 @@
               "_timeout": 2000
             },
             {
-              "uuid": "ea74ec6b-1bf9-463a-9b98-7e46423547d1",
+              "uuid": "2d12de66-734f-41de-8fa0-adb6841485ee",
               "title": "Método GET: Obtiene un inventario por ID",
               "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\inventarioController.test.js",
               "file": "\\tests\\inventarioController.test.js",
@@ -1581,8 +1581,8 @@
                   "context": null,
                   "code": "const mockInventario = { id: 1, nombre: 'Producto 1', cantidad: 10 };\nsinon.stub(Inventario, 'findById').resolves(mockInventario);\nconst req = { params: { id: '1' } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait InventarioController.getInventarioById(req, res);\nexpect(res.status.calledWith(200)).to.be.true;\nexpect(res.json.calledWith({\n    code: 200,\n    message: 'Operación exitosa',\n    data: mockInventario\n})).to.be.true;",
                   "err": {},
-                  "uuid": "4814cff2-40bb-419c-b7cf-1230614ea7e5",
-                  "parentUUID": "ea74ec6b-1bf9-463a-9b98-7e46423547d1",
+                  "uuid": "9d05e078-97a2-4273-8a30-6d392601245f",
+                  "parentUUID": "2d12de66-734f-41de-8fa0-adb6841485ee",
                   "isHook": false,
                   "skipped": false
                 },
@@ -1599,16 +1599,16 @@
                   "context": null,
                   "code": "sinon.stub(Inventario, 'findById').resolves(null);\nconst req = { params: { id: '999' } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait InventarioController.getInventarioById(req, res);\nexpect(res.status.calledWith(404)).to.be.true;\nexpect(res.json.calledWith({\n    code: 404,\n    message: 'Inventario no encontrado',\n    data: null\n})).to.be.true;",
                   "err": {},
-                  "uuid": "888cc3a7-42ad-459d-8be3-57fa114b4399",
-                  "parentUUID": "ea74ec6b-1bf9-463a-9b98-7e46423547d1",
+                  "uuid": "66cde6a4-9c6f-4609-a572-a2147898536f",
+                  "parentUUID": "2d12de66-734f-41de-8fa0-adb6841485ee",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "4814cff2-40bb-419c-b7cf-1230614ea7e5",
-                "888cc3a7-42ad-459d-8be3-57fa114b4399"
+                "9d05e078-97a2-4273-8a30-6d392601245f",
+                "66cde6a4-9c6f-4609-a572-a2147898536f"
               ],
               "failures": [],
               "pending": [],
@@ -1619,7 +1619,7 @@
               "_timeout": 2000
             },
             {
-              "uuid": "8dfda55b-8a9a-45cc-8c1f-437c19f99519",
+              "uuid": "4fb03b41-5ae7-4bc4-83ef-621a41acdc9d",
               "title": "Método PUT: Actualiza un inventario",
               "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\inventarioController.test.js",
               "file": "\\tests\\inventarioController.test.js",
@@ -1639,8 +1639,8 @@
                   "context": null,
                   "code": "const inventarioActualizado = { id: 1, nombre: 'Producto 1', cantidad: 15 };\nsinon.stub(Inventario, 'update').resolves(inventarioActualizado);\nconst req = { params: { id: '1' }, body: { nombre: 'Producto 1', cantidad: 15 } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait InventarioController.updateInventario(req, res);\nexpect(res.status.calledWith(200)).to.be.true;\nexpect(res.json.calledWith({\n    code: 200,\n    message: 'Inventario actualizado exitosamente',\n    data: inventarioActualizado\n})).to.be.true;",
                   "err": {},
-                  "uuid": "acc4c408-1bab-4e70-abea-c7b38fc6136c",
-                  "parentUUID": "8dfda55b-8a9a-45cc-8c1f-437c19f99519",
+                  "uuid": "d1089427-ba7e-4751-9b49-87c0a33b709a",
+                  "parentUUID": "4fb03b41-5ae7-4bc4-83ef-621a41acdc9d",
                   "isHook": false,
                   "skipped": false
                 },
@@ -1657,16 +1657,16 @@
                   "context": null,
                   "code": "sinon.stub(Inventario, 'update').resolves(null);\nconst req = { params: { id: '999' }, body: { nombre: 'Producto 1', cantidad: 15 } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait InventarioController.updateInventario(req, res);\nexpect(res.status.calledWith(404)).to.be.true;\nexpect(res.json.calledWith({\n    code: 404,\n    message: 'Inventario no encontrado',\n    data: null\n})).to.be.true;",
                   "err": {},
-                  "uuid": "e3e73184-5263-4a85-9a9b-cd3a769e7fe7",
-                  "parentUUID": "8dfda55b-8a9a-45cc-8c1f-437c19f99519",
+                  "uuid": "c4bbe121-1284-4430-9e36-00e9dcb25511",
+                  "parentUUID": "4fb03b41-5ae7-4bc4-83ef-621a41acdc9d",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "acc4c408-1bab-4e70-abea-c7b38fc6136c",
-                "e3e73184-5263-4a85-9a9b-cd3a769e7fe7"
+                "d1089427-ba7e-4751-9b49-87c0a33b709a",
+                "c4bbe121-1284-4430-9e36-00e9dcb25511"
               ],
               "failures": [],
               "pending": [],
@@ -1677,7 +1677,7 @@
               "_timeout": 2000
             },
             {
-              "uuid": "82259585-b464-4901-a703-7bacb2bb4202",
+              "uuid": "636ae423-3284-49e3-a293-73b2975286b4",
               "title": "Método DELETE: Elimina un inventario",
               "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\inventarioController.test.js",
               "file": "\\tests\\inventarioController.test.js",
@@ -1688,7 +1688,7 @@
                   "title": "Debería eliminar un inventario exitosamente",
                   "fullTitle": "Pruebas del controlador de inventarios Método DELETE: Elimina un inventario Debería eliminar un inventario exitosamente",
                   "timedOut": false,
-                  "duration": 0,
+                  "duration": 1,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -1697,8 +1697,8 @@
                   "context": null,
                   "code": "const inventarioEliminado = { id: 1, nombre: 'Producto 1', cantidad: 10 };\nsinon.stub(Inventario, 'delete').resolves(inventarioEliminado);\nconst req = { params: { id: '1' } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait InventarioController.deleteInventario(req, res);\nexpect(res.status.calledWith(200)).to.be.true;\nexpect(res.json.calledWith({\n    code: 200,\n    message: 'Inventario eliminado exitosamente',\n    data: inventarioEliminado\n})).to.be.true;",
                   "err": {},
-                  "uuid": "19a07efe-ea3c-4e81-a35a-322a5a0e650c",
-                  "parentUUID": "82259585-b464-4901-a703-7bacb2bb4202",
+                  "uuid": "cd4fa91e-00fb-4a0b-80d7-26b98243a8ec",
+                  "parentUUID": "636ae423-3284-49e3-a293-73b2975286b4",
                   "isHook": false,
                   "skipped": false
                 },
@@ -1706,7 +1706,7 @@
                   "title": "Debería devolver un error 404 si el inventario no existe",
                   "fullTitle": "Pruebas del controlador de inventarios Método DELETE: Elimina un inventario Debería devolver un error 404 si el inventario no existe",
                   "timedOut": false,
-                  "duration": 0,
+                  "duration": 1,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -1715,21 +1715,21 @@
                   "context": null,
                   "code": "sinon.stub(Inventario, 'delete').resolves(false);\nconst req = { params: { id: '999' } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait InventarioController.deleteInventario(req, res);\nexpect(res.status.calledWith(404)).to.be.true;\nexpect(res.json.calledWith({\n    code: 404,\n    message: 'Inventario no encontrado',\n    data: null\n})).to.be.true;",
                   "err": {},
-                  "uuid": "6398ddd8-12b1-4150-9785-530d3d15de3d",
-                  "parentUUID": "82259585-b464-4901-a703-7bacb2bb4202",
+                  "uuid": "ceb4ccd4-1c82-4942-a437-041b15becf1c",
+                  "parentUUID": "636ae423-3284-49e3-a293-73b2975286b4",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "19a07efe-ea3c-4e81-a35a-322a5a0e650c",
-                "6398ddd8-12b1-4150-9785-530d3d15de3d"
+                "cd4fa91e-00fb-4a0b-80d7-26b98243a8ec",
+                "ceb4ccd4-1c82-4942-a437-041b15becf1c"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 0,
+              "duration": 2,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
@@ -1745,7 +1745,7 @@
           "_timeout": 2000
         },
         {
-          "uuid": "e0af4f40-5fbf-4c7b-a764-3e5de2a1357d",
+          "uuid": "91b5283a-dfee-453c-86cc-3a115a74997c",
           "title": "Pruebas del controlador de productos",
           "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\productosController.test.js",
           "file": "\\tests\\productosController.test.js",
@@ -1764,8 +1764,8 @@
               "context": null,
               "code": "sinon.restore();",
               "err": {},
-              "uuid": "8f362b76-d42e-46fc-a81f-22ce7368a6d6",
-              "parentUUID": "e0af4f40-5fbf-4c7b-a764-3e5de2a1357d",
+              "uuid": "2a71d8d3-ac35-46c8-87dd-02b7e69e3682",
+              "parentUUID": "91b5283a-dfee-453c-86cc-3a115a74997c",
               "isHook": true,
               "skipped": false
             }
@@ -1773,7 +1773,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "8ef8d60a-5715-472a-91e8-ecc91b20286f",
+              "uuid": "e7f09a3b-5468-48cb-8d37-a6a291513aff",
               "title": "Método GET: Obtiene todos los productos",
               "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\productosController.test.js",
               "file": "\\tests\\productosController.test.js",
@@ -1793,8 +1793,8 @@
                   "context": null,
                   "code": "const mockProductos = [\n    { id: 1, nombre: 'Producto A', precio: 100 },\n    { id: 2, nombre: 'Producto B', precio: 200 }\n];\nsinon.stub(Producto, 'findAll').resolves(mockProductos);\nconst req = {};\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait ProductoController.getAllProductos(req, res);\nexpect(res.status.calledWith(200)).to.be.true;\nexpect(res.json.calledWith({\n    code: 200,\n    message: 'Operación exitosa',\n    data: mockProductos\n})).to.be.true;",
                   "err": {},
-                  "uuid": "30a0bed3-a76d-4db9-b4ad-17f40d7e9d46",
-                  "parentUUID": "8ef8d60a-5715-472a-91e8-ecc91b20286f",
+                  "uuid": "5f985625-f78c-4fe6-93bb-e99d3af577fc",
+                  "parentUUID": "e7f09a3b-5468-48cb-8d37-a6a291513aff",
                   "isHook": false,
                   "skipped": false
                 },
@@ -1811,16 +1811,16 @@
                   "context": null,
                   "code": "sinon.stub(Producto, 'findAll').rejects(new Error('Error de base de datos'));\nconst req = {};\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait ProductoController.getAllProductos(req, res);\nexpect(res.status.calledWith(500)).to.be.true;\nexpect(res.json.calledWith({\n    code: 500,\n    message: 'Error de base de datos',\n    data: null\n})).to.be.true;",
                   "err": {},
-                  "uuid": "e5bbe803-5274-4aa4-8913-e5da0f6d01ee",
-                  "parentUUID": "8ef8d60a-5715-472a-91e8-ecc91b20286f",
+                  "uuid": "d7044497-0bed-4885-89ef-60861edb4d5c",
+                  "parentUUID": "e7f09a3b-5468-48cb-8d37-a6a291513aff",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "30a0bed3-a76d-4db9-b4ad-17f40d7e9d46",
-                "e5bbe803-5274-4aa4-8913-e5da0f6d01ee"
+                "5f985625-f78c-4fe6-93bb-e99d3af577fc",
+                "d7044497-0bed-4885-89ef-60861edb4d5c"
               ],
               "failures": [],
               "pending": [],
@@ -1831,7 +1831,7 @@
               "_timeout": 2000
             },
             {
-              "uuid": "8386cc31-1b13-44ba-b3a3-9d754785a39b",
+              "uuid": "8499d9fc-ccf7-4592-abe2-f7f91bdbf5e4",
               "title": "Método POST: Crea un producto",
               "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\productosController.test.js",
               "file": "\\tests\\productosController.test.js",
@@ -1842,7 +1842,7 @@
                   "title": "Debería crear un producto exitosamente",
                   "fullTitle": "Pruebas del controlador de productos Método POST: Crea un producto Debería crear un producto exitosamente",
                   "timedOut": false,
-                  "duration": 2,
+                  "duration": 1,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -1851,8 +1851,8 @@
                   "context": null,
                   "code": "const nuevoProducto = { nombre: 'Producto C', precio: 300 };\nconst creadoProducto = { id: 3, ...nuevoProducto };\nsinon.stub(Producto, 'create').resolves(creadoProducto);\nconst req = { body: nuevoProducto };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait ProductoController.createProducto(req, res);\nexpect(res.status.calledWith(201)).to.be.true;\nexpect(res.json.calledWith({\n    code: 201,\n    message: 'Producto creado exitosamente',\n    data: creadoProducto\n})).to.be.true;",
                   "err": {},
-                  "uuid": "97a152eb-bb1b-441c-9ba5-e205b9db45fc",
-                  "parentUUID": "8386cc31-1b13-44ba-b3a3-9d754785a39b",
+                  "uuid": "83710748-7e81-47e2-9134-a32c7a0e9441",
+                  "parentUUID": "8499d9fc-ccf7-4592-abe2-f7f91bdbf5e4",
                   "isHook": false,
                   "skipped": false
                 },
@@ -1860,7 +1860,7 @@
                   "title": "Debería manejar errores al crear un producto",
                   "fullTitle": "Pruebas del controlador de productos Método POST: Crea un producto Debería manejar errores al crear un producto",
                   "timedOut": false,
-                  "duration": 1,
+                  "duration": 0,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -1869,27 +1869,27 @@
                   "context": null,
                   "code": "sinon.stub(Producto, 'create').rejects(new Error('Error al crear el producto'));\nconst req = { body: { nombre: 'Producto D', precio: 400 } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait ProductoController.createProducto(req, res);\nexpect(res.status.calledWith(500)).to.be.true;\nexpect(res.json.calledWith({\n    code: 500,\n    message: 'Error al crear el producto',\n    data: null\n})).to.be.true;",
                   "err": {},
-                  "uuid": "bcd5026f-1e2d-4ed6-8009-1e89cc5a4300",
-                  "parentUUID": "8386cc31-1b13-44ba-b3a3-9d754785a39b",
+                  "uuid": "8ecf34be-c506-4caa-9d88-394917968d02",
+                  "parentUUID": "8499d9fc-ccf7-4592-abe2-f7f91bdbf5e4",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "97a152eb-bb1b-441c-9ba5-e205b9db45fc",
-                "bcd5026f-1e2d-4ed6-8009-1e89cc5a4300"
+                "83710748-7e81-47e2-9134-a32c7a0e9441",
+                "8ecf34be-c506-4caa-9d88-394917968d02"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 3,
+              "duration": 1,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "3023e9f0-10f2-4745-89ed-9a23f2a0af91",
+              "uuid": "f838befc-e71a-4756-94cb-abc4c086e623",
               "title": "Método DELETE: Elimina un producto",
               "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\productosController.test.js",
               "file": "\\tests\\productosController.test.js",
@@ -1909,8 +1909,8 @@
                   "context": null,
                   "code": "sinon.stub(Producto, 'delete').resolves(true);\nconst req = { params: { id: 1 } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait ProductoController.deleteProducto(req, res);\nexpect(res.status.calledWith(200)).to.be.true;\nexpect(res.json.calledWith({\n    code: 200,\n    message: 'Producto eliminado exitosamente',\n    data: null\n})).to.be.true;",
                   "err": {},
-                  "uuid": "7c3ce14e-cefa-49d1-9bcb-eb705d41b870",
-                  "parentUUID": "3023e9f0-10f2-4745-89ed-9a23f2a0af91",
+                  "uuid": "088e34be-854c-46b6-9e7c-fdd077c7e08f",
+                  "parentUUID": "f838befc-e71a-4756-94cb-abc4c086e623",
                   "isHook": false,
                   "skipped": false
                 },
@@ -1927,8 +1927,8 @@
                   "context": null,
                   "code": "sinon.stub(Producto, 'delete').resolves(false);\nconst req = { params: { id: 999 } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait ProductoController.deleteProducto(req, res);\nexpect(res.status.calledWith(404)).to.be.true;\nexpect(res.json.calledWith({\n    code: 404,\n    message: 'Producto no encontrado',\n    data: null\n})).to.be.true;",
                   "err": {},
-                  "uuid": "872eb62c-c1f2-4a90-bbf0-368fcc27b6b2",
-                  "parentUUID": "3023e9f0-10f2-4745-89ed-9a23f2a0af91",
+                  "uuid": "cafe2932-fb1f-40ae-94d3-5e8f1fa5c577",
+                  "parentUUID": "f838befc-e71a-4756-94cb-abc4c086e623",
                   "isHook": false,
                   "skipped": false
                 },
@@ -1936,7 +1936,7 @@
                   "title": "Debería manejar errores al eliminar un producto",
                   "fullTitle": "Pruebas del controlador de productos Método DELETE: Elimina un producto Debería manejar errores al eliminar un producto",
                   "timedOut": false,
-                  "duration": 1,
+                  "duration": 0,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -1945,22 +1945,22 @@
                   "context": null,
                   "code": "sinon.stub(Producto, 'delete').rejects(new Error('Error al eliminar el producto'));\nconst req = { params: { id: 1 } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait ProductoController.deleteProducto(req, res);\nexpect(res.status.calledWith(500)).to.be.true;\nexpect(res.json.calledWith({\n    code: 500,\n    message: 'Error al eliminar el producto',\n    data: null\n})).to.be.true;",
                   "err": {},
-                  "uuid": "df52b777-5a55-424b-be82-753126321d1f",
-                  "parentUUID": "3023e9f0-10f2-4745-89ed-9a23f2a0af91",
+                  "uuid": "d44dd12b-0b16-40a3-b5e4-bd4357207550",
+                  "parentUUID": "f838befc-e71a-4756-94cb-abc4c086e623",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "7c3ce14e-cefa-49d1-9bcb-eb705d41b870",
-                "872eb62c-c1f2-4a90-bbf0-368fcc27b6b2",
-                "df52b777-5a55-424b-be82-753126321d1f"
+                "088e34be-854c-46b6-9e7c-fdd077c7e08f",
+                "cafe2932-fb1f-40ae-94d3-5e8f1fa5c577",
+                "d44dd12b-0b16-40a3-b5e4-bd4357207550"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 3,
+              "duration": 2,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
@@ -1976,7 +1976,7 @@
           "_timeout": 2000
         },
         {
-          "uuid": "8783bb49-cc80-4106-baf5-c2ed9a0336da",
+          "uuid": "cdf92bb6-f3b6-49ab-a324-fcecff98f63c",
           "title": "Pruebas del controlador de roles",
           "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\rolController.test.js",
           "file": "\\tests\\rolController.test.js",
@@ -1995,8 +1995,8 @@
               "context": null,
               "code": "sinon.restore();",
               "err": {},
-              "uuid": "53101924-e436-418d-a5f6-e4c61ab1a832",
-              "parentUUID": "8783bb49-cc80-4106-baf5-c2ed9a0336da",
+              "uuid": "8e71f79a-5719-4610-8e38-ab865e98f276",
+              "parentUUID": "cdf92bb6-f3b6-49ab-a324-fcecff98f63c",
               "isHook": true,
               "skipped": false
             }
@@ -2004,7 +2004,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "0c0bfedc-8ba4-496a-8db8-63f6e275a5f6",
+              "uuid": "f702f06f-5bc4-49c0-936f-59a18d096ca0",
               "title": "Método GET: Obtiene todos los roles",
               "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\rolController.test.js",
               "file": "\\tests\\rolController.test.js",
@@ -2024,8 +2024,8 @@
                   "context": null,
                   "code": "const mockRoles = [\n    { id: 1, nombre: 'Admin' },\n    { id: 2, nombre: 'Usuario' }\n];\nsinon.stub(Rol, 'findAll').resolves(mockRoles);\nconst req = {};\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait RolController.getAllRol(req, res);\nexpect(res.status.calledWith(200)).to.be.true;\nexpect(res.json.calledWith({\n    code: 200,\n    message: 'Operación exitosa',\n    data: mockRoles\n})).to.be.true;",
                   "err": {},
-                  "uuid": "459c13da-254f-4b43-875b-06d128790226",
-                  "parentUUID": "0c0bfedc-8ba4-496a-8db8-63f6e275a5f6",
+                  "uuid": "9f0cabd2-5e94-493d-b5c1-37583cfd08ec",
+                  "parentUUID": "f702f06f-5bc4-49c0-936f-59a18d096ca0",
                   "isHook": false,
                   "skipped": false
                 },
@@ -2042,16 +2042,16 @@
                   "context": null,
                   "code": "sinon.stub(Rol, 'findAll').rejects(new Error('Error de base de datos'));\nconst req = {};\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait RolController.getAllRol(req, res);\nexpect(res.status.calledWith(500)).to.be.true;\nexpect(res.json.calledWith({\n    code: 500,\n    message: 'Error de base de datos',\n    data: null\n})).to.be.true;",
                   "err": {},
-                  "uuid": "597029d1-bb81-4c24-95d5-13224cc19ca0",
-                  "parentUUID": "0c0bfedc-8ba4-496a-8db8-63f6e275a5f6",
+                  "uuid": "59bae471-6f69-4c3e-9015-c07f9782ae4d",
+                  "parentUUID": "f702f06f-5bc4-49c0-936f-59a18d096ca0",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "459c13da-254f-4b43-875b-06d128790226",
-                "597029d1-bb81-4c24-95d5-13224cc19ca0"
+                "9f0cabd2-5e94-493d-b5c1-37583cfd08ec",
+                "59bae471-6f69-4c3e-9015-c07f9782ae4d"
               ],
               "failures": [],
               "pending": [],
@@ -2062,7 +2062,7 @@
               "_timeout": 2000
             },
             {
-              "uuid": "a1cedcff-29b6-45e7-8359-ad9cfe39ab72",
+              "uuid": "8e96f9c3-34b5-4e5a-b892-0291a2de4231",
               "title": "Método GET: Obtiene todos los roles por un identificador",
               "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\rolController.test.js",
               "file": "\\tests\\rolController.test.js",
@@ -2082,8 +2082,8 @@
                   "context": null,
                   "code": "const mockRol = { id: 1, nombre: 'Admin' };\nsinon.stub(Rol, 'findById').resolves(mockRol);\nconst req = { params: { id: 1 } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait RolController.getRolById(req, res);\nexpect(res.status.calledWith(200)).to.be.true;\nexpect(res.json.calledWith({\n    code: 200,\n    message: 'Operación exitosa',\n    data: mockRol\n})).to.be.true;",
                   "err": {},
-                  "uuid": "5e556901-f91e-4dd1-b35f-eeb6cfaf2903",
-                  "parentUUID": "a1cedcff-29b6-45e7-8359-ad9cfe39ab72",
+                  "uuid": "006536ef-82f7-4c4c-8f20-f8f3921b91e0",
+                  "parentUUID": "8e96f9c3-34b5-4e5a-b892-0291a2de4231",
                   "isHook": false,
                   "skipped": false
                 },
@@ -2100,8 +2100,8 @@
                   "context": null,
                   "code": "sinon.stub(Rol, 'findById').resolves(null);\nconst req = { params: { id: 999 } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait RolController.getRolById(req, res);\nexpect(res.status.calledWith(404)).to.be.true;\nexpect(res.json.calledWith({\n    code: 404,\n    message: 'Rol no encontrado',\n    data: null\n})).to.be.true;",
                   "err": {},
-                  "uuid": "ca5cac92-3ff9-4d06-a298-da025a5572c1",
-                  "parentUUID": "a1cedcff-29b6-45e7-8359-ad9cfe39ab72",
+                  "uuid": "80e6262b-9c68-4589-93f7-f76b78732bc6",
+                  "parentUUID": "8e96f9c3-34b5-4e5a-b892-0291a2de4231",
                   "isHook": false,
                   "skipped": false
                 },
@@ -2109,7 +2109,7 @@
                   "title": "Debería manejar errores al buscar un rol por ID",
                   "fullTitle": "Pruebas del controlador de roles Método GET: Obtiene todos los roles por un identificador Debería manejar errores al buscar un rol por ID",
                   "timedOut": false,
-                  "duration": 1,
+                  "duration": 0,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -2118,28 +2118,28 @@
                   "context": null,
                   "code": "sinon.stub(Rol, 'findById').rejects(new Error('Error de base de datos'));\nconst req = { params: { id: 1 } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait RolController.getRolById(req, res);\nexpect(res.status.calledWith(500)).to.be.true;\nexpect(res.json.calledWith({\n    code: 500,\n    message: 'Error de base de datos',\n    data: null\n})).to.be.true;",
                   "err": {},
-                  "uuid": "b4a33f25-06fb-4b6c-afd2-51f2e6abf1b5",
-                  "parentUUID": "a1cedcff-29b6-45e7-8359-ad9cfe39ab72",
+                  "uuid": "c3ed5182-08d8-43f3-8ab6-875cae1de09a",
+                  "parentUUID": "8e96f9c3-34b5-4e5a-b892-0291a2de4231",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "5e556901-f91e-4dd1-b35f-eeb6cfaf2903",
-                "ca5cac92-3ff9-4d06-a298-da025a5572c1",
-                "b4a33f25-06fb-4b6c-afd2-51f2e6abf1b5"
+                "006536ef-82f7-4c4c-8f20-f8f3921b91e0",
+                "80e6262b-9c68-4589-93f7-f76b78732bc6",
+                "c3ed5182-08d8-43f3-8ab6-875cae1de09a"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 2,
+              "duration": 1,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "d2282fa1-f1d6-4923-8e30-6e9582e6d087",
+              "uuid": "324b328f-0f5c-4bc3-ae4f-dcc6d93917f2",
               "title": "Método POST: Crea un nuevo rol",
               "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\rolController.test.js",
               "file": "\\tests\\rolController.test.js",
@@ -2150,7 +2150,7 @@
                   "title": "Debería crear un rol exitosamente",
                   "fullTitle": "Pruebas del controlador de roles Método POST: Crea un nuevo rol Debería crear un rol exitosamente",
                   "timedOut": false,
-                  "duration": 1,
+                  "duration": 0,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -2159,8 +2159,8 @@
                   "context": null,
                   "code": "const nuevoRol = { nombre: 'Editor' };\nconst mockRolCreado = { id: 3, ...nuevoRol };\nsinon.stub(Rol, 'create').resolves(mockRolCreado);\nconst req = { body: nuevoRol };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait RolController.createRol(req, res);\nexpect(res.status.calledWith(201)).to.be.true;\nexpect(res.json.calledWith({\n    code: 201,\n    message: 'Rol creado exitosamente',\n    data: mockRolCreado\n})).to.be.true;",
                   "err": {},
-                  "uuid": "3ff351ed-9699-4a93-9bed-0970963deaae",
-                  "parentUUID": "d2282fa1-f1d6-4923-8e30-6e9582e6d087",
+                  "uuid": "3b57b7f2-7102-4636-8dca-15dce661d9ba",
+                  "parentUUID": "324b328f-0f5c-4bc3-ae4f-dcc6d93917f2",
                   "isHook": false,
                   "skipped": false
                 },
@@ -2177,27 +2177,27 @@
                   "context": null,
                   "code": "sinon.stub(Rol, 'create').rejects(new Error('Error al crear el rol'));\nconst req = { body: { nombre: 'Editor' } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait RolController.createRol(req, res);\nexpect(res.status.calledWith(500)).to.be.true;\nexpect(res.json.calledWith({\n    code: 500,\n    message: 'Error al crear el rol',\n    data: null\n})).to.be.true;",
                   "err": {},
-                  "uuid": "1baacec9-23dc-4e5c-9fbf-bfc9c42dd562",
-                  "parentUUID": "d2282fa1-f1d6-4923-8e30-6e9582e6d087",
+                  "uuid": "324a86a3-1bbb-43f6-b7a3-e2cbd3b21a79",
+                  "parentUUID": "324b328f-0f5c-4bc3-ae4f-dcc6d93917f2",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "3ff351ed-9699-4a93-9bed-0970963deaae",
-                "1baacec9-23dc-4e5c-9fbf-bfc9c42dd562"
+                "3b57b7f2-7102-4636-8dca-15dce661d9ba",
+                "324a86a3-1bbb-43f6-b7a3-e2cbd3b21a79"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 2,
+              "duration": 1,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "f271dc17-5658-45ef-8d14-de84e907414e",
+              "uuid": "bcdee432-b93a-468d-88f6-0db592e9a2cf",
               "title": "Método DELETE: Elimina un rol",
               "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\rolController.test.js",
               "file": "\\tests\\rolController.test.js",
@@ -2217,8 +2217,8 @@
                   "context": null,
                   "code": "sinon.stub(Rol, 'delete').resolves(true);\nconst req = { params: { id: 1 } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait RolController.deleteRol(req, res);\nexpect(res.status.calledWith(200)).to.be.true;\nexpect(res.json.calledWith({\n    code: 200,\n    message: 'Rol eliminado exitosamente',\n    data: null\n})).to.be.true;",
                   "err": {},
-                  "uuid": "4d0af2ad-bb7f-4440-a243-32a0983087b0",
-                  "parentUUID": "f271dc17-5658-45ef-8d14-de84e907414e",
+                  "uuid": "48c6bc52-e8a1-4359-8698-5aa11dac36b9",
+                  "parentUUID": "bcdee432-b93a-468d-88f6-0db592e9a2cf",
                   "isHook": false,
                   "skipped": false
                 },
@@ -2226,7 +2226,7 @@
                   "title": "Debería devolver un error 404 si el rol no existe",
                   "fullTitle": "Pruebas del controlador de roles Método DELETE: Elimina un rol Debería devolver un error 404 si el rol no existe",
                   "timedOut": false,
-                  "duration": 0,
+                  "duration": 1,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -2235,8 +2235,8 @@
                   "context": null,
                   "code": "sinon.stub(Rol, 'delete').resolves(false);\nconst req = { params: { id: 999 } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait RolController.deleteRol(req, res);\nexpect(res.status.calledWith(404)).to.be.true;\nexpect(res.json.calledWith({\n    code: 404,\n    message: 'Rol no encontrado',\n    data: null\n})).to.be.true;",
                   "err": {},
-                  "uuid": "67b87623-a296-48bf-b78e-ea70664a9d96",
-                  "parentUUID": "f271dc17-5658-45ef-8d14-de84e907414e",
+                  "uuid": "7c0bbaff-e2cb-42c9-afc0-580c047810f6",
+                  "parentUUID": "bcdee432-b93a-468d-88f6-0db592e9a2cf",
                   "isHook": false,
                   "skipped": false
                 },
@@ -2244,7 +2244,7 @@
                   "title": "Debería manejar errores al eliminar un rol",
                   "fullTitle": "Pruebas del controlador de roles Método DELETE: Elimina un rol Debería manejar errores al eliminar un rol",
                   "timedOut": false,
-                  "duration": 0,
+                  "duration": 1,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -2253,22 +2253,22 @@
                   "context": null,
                   "code": "sinon.stub(Rol, 'delete').rejects(new Error('Error al eliminar el rol'));\nconst req = { params: { id: 1 } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait RolController.deleteRol(req, res);\nexpect(res.status.calledWith(500)).to.be.true;\nexpect(res.json.calledWith({\n    code: 500,\n    message: 'Error al eliminar el rol',\n    data: null\n})).to.be.true;",
                   "err": {},
-                  "uuid": "1809dabe-1ee4-4256-a7a6-af23af3484a5",
-                  "parentUUID": "f271dc17-5658-45ef-8d14-de84e907414e",
+                  "uuid": "3ad64e84-3549-492e-bc98-486158720e56",
+                  "parentUUID": "bcdee432-b93a-468d-88f6-0db592e9a2cf",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "4d0af2ad-bb7f-4440-a243-32a0983087b0",
-                "67b87623-a296-48bf-b78e-ea70664a9d96",
-                "1809dabe-1ee4-4256-a7a6-af23af3484a5"
+                "48c6bc52-e8a1-4359-8698-5aa11dac36b9",
+                "7c0bbaff-e2cb-42c9-afc0-580c047810f6",
+                "3ad64e84-3549-492e-bc98-486158720e56"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 1,
+              "duration": 3,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
@@ -2284,7 +2284,7 @@
           "_timeout": 2000
         },
         {
-          "uuid": "f291c36e-12fb-43a8-9764-ae0604842be6",
+          "uuid": "21cebcff-82cc-47ce-8908-b28d70774471",
           "title": "Pruebas de las RUTAS de la API de clientes, método GET",
           "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\rutas.test.js",
           "file": "\\tests\\rutas.test.js",
@@ -2295,7 +2295,7 @@
               "title": "Debería obtener todos los clientes",
               "fullTitle": "Pruebas de las RUTAS de la API de clientes, método GET Debería obtener todos los clientes",
               "timedOut": false,
-              "duration": 134,
+              "duration": 735,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -2304,26 +2304,26 @@
               "context": null,
               "code": "const response = await supertest(app).get('/api/clientes');\nexpect(response.status).to.equal(200);\nexpect(response.body).to.have.property('data').that.is.an('array');",
               "err": {},
-              "uuid": "341d6dd0-d4d6-44a5-9cd4-def11fd03c77",
-              "parentUUID": "f291c36e-12fb-43a8-9764-ae0604842be6",
+              "uuid": "d9b27236-0ec0-4402-aa68-4ba2fc224535",
+              "parentUUID": "21cebcff-82cc-47ce-8908-b28d70774471",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "341d6dd0-d4d6-44a5-9cd4-def11fd03c77"
+            "d9b27236-0ec0-4402-aa68-4ba2fc224535"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 134,
+          "duration": 735,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
         },
         {
-          "uuid": "72ae1969-17b7-4391-80aa-acff4ca75444",
+          "uuid": "d52a00ef-9183-4eaf-98db-42ce136af29b",
           "title": "Pruebas de las RUTAS de la API del detalle de la venta, método GET",
           "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\rutas.test.js",
           "file": "\\tests\\rutas.test.js",
@@ -2334,7 +2334,7 @@
               "title": "Debería obtener todos los detalles de la venta",
               "fullTitle": "Pruebas de las RUTAS de la API del detalle de la venta, método GET Debería obtener todos los detalles de la venta",
               "timedOut": false,
-              "duration": 13,
+              "duration": 9,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -2343,26 +2343,26 @@
               "context": null,
               "code": "const response = await supertest(app).get('/api/detalleVenta');\nexpect(response.status).to.equal(200);\nexpect(response.body).to.have.property('data').that.is.an('array');",
               "err": {},
-              "uuid": "dac2860b-b8bd-42e1-9317-b05250855192",
-              "parentUUID": "72ae1969-17b7-4391-80aa-acff4ca75444",
+              "uuid": "53bd479e-9b3c-43d9-ad2b-ef9e62ec2531",
+              "parentUUID": "d52a00ef-9183-4eaf-98db-42ce136af29b",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "dac2860b-b8bd-42e1-9317-b05250855192"
+            "53bd479e-9b3c-43d9-ad2b-ef9e62ec2531"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 13,
+          "duration": 9,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
         },
         {
-          "uuid": "6066fbba-dadf-483a-bff6-8f77f37f6deb",
+          "uuid": "c1a3437a-48c4-4aed-942d-8a417fa5c009",
           "title": "Pruebas de las RUTAS de la API empleados, método GET",
           "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\rutas.test.js",
           "file": "\\tests\\rutas.test.js",
@@ -2382,15 +2382,15 @@
               "context": null,
               "code": "const response = await supertest(app).get('/api/empleados');\nexpect(response.status).to.equal(200);\nexpect(response.body).to.have.property('data').that.is.an('array');",
               "err": {},
-              "uuid": "67f0eb89-1cda-44aa-ba73-740dec85fb17",
-              "parentUUID": "6066fbba-dadf-483a-bff6-8f77f37f6deb",
+              "uuid": "8492cb18-cb32-43b0-8e54-e58f024ef248",
+              "parentUUID": "c1a3437a-48c4-4aed-942d-8a417fa5c009",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "67f0eb89-1cda-44aa-ba73-740dec85fb17"
+            "8492cb18-cb32-43b0-8e54-e58f024ef248"
           ],
           "failures": [],
           "pending": [],
@@ -2401,7 +2401,7 @@
           "_timeout": 2000
         },
         {
-          "uuid": "96e42485-74f4-41f9-afbb-0e25d3a47625",
+          "uuid": "e1fcfce1-1a1c-4b5a-bc59-0966169503cf",
           "title": "Pruebas de las RUTAS de la API de inventarios, método GET",
           "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\rutas.test.js",
           "file": "\\tests\\rutas.test.js",
@@ -2412,7 +2412,7 @@
               "title": "Debería obtener todo el inventario",
               "fullTitle": "Pruebas de las RUTAS de la API de inventarios, método GET Debería obtener todo el inventario",
               "timedOut": false,
-              "duration": 12,
+              "duration": 9,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -2421,132 +2421,15 @@
               "context": null,
               "code": "const response = await supertest(app).get('/api/inventario');\nexpect(response.status).to.equal(200);\nexpect(response.body).to.have.property('data').that.is.an('array');",
               "err": {},
-              "uuid": "98a4a6ee-d7f0-42bd-b5c4-86ce5dc012d8",
-              "parentUUID": "96e42485-74f4-41f9-afbb-0e25d3a47625",
+              "uuid": "bd08e0f2-3029-408c-9067-d24d2ce5a172",
+              "parentUUID": "e1fcfce1-1a1c-4b5a-bc59-0966169503cf",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "98a4a6ee-d7f0-42bd-b5c4-86ce5dc012d8"
-          ],
-          "failures": [],
-          "pending": [],
-          "skipped": [],
-          "duration": 12,
-          "root": false,
-          "rootEmpty": false,
-          "_timeout": 2000
-        },
-        {
-          "uuid": "3d851d46-5f4a-47f6-9688-e5614d339c32",
-          "title": "Pruebas de las RUTAS de la API de productos, método GET",
-          "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\rutas.test.js",
-          "file": "\\tests\\rutas.test.js",
-          "beforeHooks": [],
-          "afterHooks": [],
-          "tests": [
-            {
-              "title": "Debería obtener todo los productos",
-              "fullTitle": "Pruebas de las RUTAS de la API de productos, método GET Debería obtener todo los productos",
-              "timedOut": false,
-              "duration": 11,
-              "state": "passed",
-              "speed": "fast",
-              "pass": true,
-              "fail": false,
-              "pending": false,
-              "context": null,
-              "code": "const response = await supertest(app).get('/api/productos');\nexpect(response.status).to.equal(200);\nexpect(response.body).to.have.property('data').that.is.an('array');",
-              "err": {},
-              "uuid": "1b5e0d58-3821-4141-9861-99ecad999782",
-              "parentUUID": "3d851d46-5f4a-47f6-9688-e5614d339c32",
-              "isHook": false,
-              "skipped": false
-            }
-          ],
-          "suites": [],
-          "passes": [
-            "1b5e0d58-3821-4141-9861-99ecad999782"
-          ],
-          "failures": [],
-          "pending": [],
-          "skipped": [],
-          "duration": 11,
-          "root": false,
-          "rootEmpty": false,
-          "_timeout": 2000
-        },
-        {
-          "uuid": "d97b8890-0433-4c2d-9228-62ad014a7dc5",
-          "title": "Pruebas de las RUTAS de la API sobre los roles, método GET",
-          "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\rutas.test.js",
-          "file": "\\tests\\rutas.test.js",
-          "beforeHooks": [],
-          "afterHooks": [],
-          "tests": [
-            {
-              "title": "Debería obtener todo los roles",
-              "fullTitle": "Pruebas de las RUTAS de la API sobre los roles, método GET Debería obtener todo los roles",
-              "timedOut": false,
-              "duration": 12,
-              "state": "passed",
-              "speed": "fast",
-              "pass": true,
-              "fail": false,
-              "pending": false,
-              "context": null,
-              "code": "const response = await supertest(app).get('/api/rol');\nexpect(response.status).to.equal(200);\nexpect(response.body).to.have.property('data').that.is.an('array');",
-              "err": {},
-              "uuid": "75552b28-60a4-4a59-917a-7e3abcdf459f",
-              "parentUUID": "d97b8890-0433-4c2d-9228-62ad014a7dc5",
-              "isHook": false,
-              "skipped": false
-            }
-          ],
-          "suites": [],
-          "passes": [
-            "75552b28-60a4-4a59-917a-7e3abcdf459f"
-          ],
-          "failures": [],
-          "pending": [],
-          "skipped": [],
-          "duration": 12,
-          "root": false,
-          "rootEmpty": false,
-          "_timeout": 2000
-        },
-        {
-          "uuid": "7f3ac201-b544-46c0-92d9-4cace3aa2bdb",
-          "title": "Pruebas de las RUTAS de la API sobre los tipos de productos que existen, método GET",
-          "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\rutas.test.js",
-          "file": "\\tests\\rutas.test.js",
-          "beforeHooks": [],
-          "afterHooks": [],
-          "tests": [
-            {
-              "title": "Debería obtener todo los tipos de productos",
-              "fullTitle": "Pruebas de las RUTAS de la API sobre los tipos de productos que existen, método GET Debería obtener todo los tipos de productos",
-              "timedOut": false,
-              "duration": 9,
-              "state": "passed",
-              "speed": "fast",
-              "pass": true,
-              "fail": false,
-              "pending": false,
-              "context": null,
-              "code": "const response = await supertest(app).get('/api/tipoProducto');\nexpect(response.status).to.equal(200);\nexpect(response.body).to.have.property('data').that.is.an('array');",
-              "err": {},
-              "uuid": "8025bd90-4d26-4cc6-924f-597b7b32db6b",
-              "parentUUID": "7f3ac201-b544-46c0-92d9-4cace3aa2bdb",
-              "isHook": false,
-              "skipped": false
-            }
-          ],
-          "suites": [],
-          "passes": [
-            "8025bd90-4d26-4cc6-924f-597b7b32db6b"
+            "bd08e0f2-3029-408c-9067-d24d2ce5a172"
           ],
           "failures": [],
           "pending": [],
@@ -2557,7 +2440,124 @@
           "_timeout": 2000
         },
         {
-          "uuid": "e7b72273-d43f-4b10-8d42-664a1e9317b0",
+          "uuid": "beede287-b8f1-4963-ba17-13dc9fa36e47",
+          "title": "Pruebas de las RUTAS de la API de productos, método GET",
+          "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\rutas.test.js",
+          "file": "\\tests\\rutas.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Debería obtener todo los productos",
+              "fullTitle": "Pruebas de las RUTAS de la API de productos, método GET Debería obtener todo los productos",
+              "timedOut": false,
+              "duration": 13,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await supertest(app).get('/api/productos');\nexpect(response.status).to.equal(200);\nexpect(response.body).to.have.property('data').that.is.an('array');",
+              "err": {},
+              "uuid": "e5e669b8-c174-4856-85a6-65b1c8980826",
+              "parentUUID": "beede287-b8f1-4963-ba17-13dc9fa36e47",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e5e669b8-c174-4856-85a6-65b1c8980826"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 13,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "3e090738-f8c8-4c8e-9d1c-fc48331e3267",
+          "title": "Pruebas de las RUTAS de la API sobre los roles, método GET",
+          "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\rutas.test.js",
+          "file": "\\tests\\rutas.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Debería obtener todo los roles",
+              "fullTitle": "Pruebas de las RUTAS de la API sobre los roles, método GET Debería obtener todo los roles",
+              "timedOut": false,
+              "duration": 8,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await supertest(app).get('/api/rol');\nexpect(response.status).to.equal(200);\nexpect(response.body).to.have.property('data').that.is.an('array');",
+              "err": {},
+              "uuid": "2b6a9178-47c8-4910-973c-a4e84faa97e7",
+              "parentUUID": "3e090738-f8c8-4c8e-9d1c-fc48331e3267",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "2b6a9178-47c8-4910-973c-a4e84faa97e7"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 8,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "20663802-0530-4a60-9562-749bc867063a",
+          "title": "Pruebas de las RUTAS de la API sobre los tipos de productos que existen, método GET",
+          "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\rutas.test.js",
+          "file": "\\tests\\rutas.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Debería obtener todo los tipos de productos",
+              "fullTitle": "Pruebas de las RUTAS de la API sobre los tipos de productos que existen, método GET Debería obtener todo los tipos de productos",
+              "timedOut": false,
+              "duration": 8,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await supertest(app).get('/api/tipoProducto');\nexpect(response.status).to.equal(200);\nexpect(response.body).to.have.property('data').that.is.an('array');",
+              "err": {},
+              "uuid": "bdaf54fd-bc24-4f5a-8e87-85e066064b0e",
+              "parentUUID": "20663802-0530-4a60-9562-749bc867063a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "bdaf54fd-bc24-4f5a-8e87-85e066064b0e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 8,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "f887eb77-20e0-4ddd-bd03-28be01ec1645",
           "title": "Pruebas de las RUTAS de la API sobre los usuarios, método GET",
           "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\rutas.test.js",
           "file": "\\tests\\rutas.test.js",
@@ -2577,15 +2577,15 @@
               "context": null,
               "code": "const token = 'powerclean'; // Sustituye por un token válido\nconst response = await supertest(app)\n  .get('/api/usuarios')\n  .set('Authorization', `Bearer ${token}`);\nexpect(response.status).to.equal(200);\nexpect(response.body).to.have.property('data').that.is.an('array');",
               "err": {},
-              "uuid": "4e751cd9-7184-4b2f-b33c-751e0545cd49",
-              "parentUUID": "e7b72273-d43f-4b10-8d42-664a1e9317b0",
+              "uuid": "99101704-e2e8-4c45-91b7-2955927d0284",
+              "parentUUID": "f887eb77-20e0-4ddd-bd03-28be01ec1645",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "4e751cd9-7184-4b2f-b33c-751e0545cd49"
+            "99101704-e2e8-4c45-91b7-2955927d0284"
           ],
           "failures": [],
           "pending": [],
@@ -2596,7 +2596,7 @@
           "_timeout": 2000
         },
         {
-          "uuid": "73a24413-ff3e-4463-aac3-9263dae15e64",
+          "uuid": "938b7295-09bf-42e2-93cc-ac8b04352352",
           "title": "Pruebas de las RUTAS de la API sobre todas las ventas, método GET",
           "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\rutas.test.js",
           "file": "\\tests\\rutas.test.js",
@@ -2607,7 +2607,7 @@
               "title": "Debería obtener todo las ventas",
               "fullTitle": "Pruebas de las RUTAS de la API sobre todas las ventas, método GET Debería obtener todo las ventas",
               "timedOut": false,
-              "duration": 14,
+              "duration": 10,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -2616,26 +2616,26 @@
               "context": null,
               "code": "const response = await supertest(app).get('/api/venta');\nexpect(response.status).to.equal(200);\nexpect(response.body).to.have.property('data').that.is.an('array');",
               "err": {},
-              "uuid": "dbe9fdf3-d659-4eff-abe2-358cfdf2ef70",
-              "parentUUID": "73a24413-ff3e-4463-aac3-9263dae15e64",
+              "uuid": "b3a2419c-650b-46ea-9a9b-6ee25463e067",
+              "parentUUID": "938b7295-09bf-42e2-93cc-ac8b04352352",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "dbe9fdf3-d659-4eff-abe2-358cfdf2ef70"
+            "b3a2419c-650b-46ea-9a9b-6ee25463e067"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 14,
+          "duration": 10,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
         },
         {
-          "uuid": "59021ff3-501e-4976-a11d-bb1a6ac7764a",
+          "uuid": "9db45083-e985-417a-b443-04c40e5c5c99",
           "title": "Pruebas del controlador de tipos de productos",
           "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\tipoProductoController.test.js",
           "file": "\\tests\\tipoProductoController.test.js",
@@ -2654,8 +2654,8 @@
               "context": null,
               "code": "sinon.restore();",
               "err": {},
-              "uuid": "e6ff8540-925a-4725-bdaa-0a82530d7cc5",
-              "parentUUID": "59021ff3-501e-4976-a11d-bb1a6ac7764a",
+              "uuid": "a4a34e8a-8d14-4119-894d-d75d29ca52cf",
+              "parentUUID": "9db45083-e985-417a-b443-04c40e5c5c99",
               "isHook": true,
               "skipped": false
             }
@@ -2663,7 +2663,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "0d8f5f2a-11a7-42fb-b3a8-c433b7e6479d",
+              "uuid": "97613429-e543-4dc5-9217-492d611bc11d",
               "title": "Método GET: Obtiene todos los tipos de productos",
               "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\tipoProductoController.test.js",
               "file": "\\tests\\tipoProductoController.test.js",
@@ -2683,8 +2683,8 @@
                   "context": null,
                   "code": "const mockTipoProductos = [\n    { id: 1, nombre: 'Electrónica' },\n    { id: 2, nombre: 'Ropa' }\n];\nsinon.stub(TipoProducto, 'findAll').resolves(mockTipoProductos);\nconst req = {};\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait TipoProductoController.getAllTipoProductos(req, res);\nexpect(res.status.calledWith(200)).to.be.true;\nexpect(res.json.calledWith({\n    code: 200,\n    message: 'Operación exitosa',\n    data: mockTipoProductos\n})).to.be.true;",
                   "err": {},
-                  "uuid": "f841b8b8-99dd-4662-a6ec-c740e8bfc56f",
-                  "parentUUID": "0d8f5f2a-11a7-42fb-b3a8-c433b7e6479d",
+                  "uuid": "375e5265-3d79-4f79-af99-927ddb835f50",
+                  "parentUUID": "97613429-e543-4dc5-9217-492d611bc11d",
                   "isHook": false,
                   "skipped": false
                 },
@@ -2701,16 +2701,16 @@
                   "context": null,
                   "code": "sinon.stub(TipoProducto, 'findAll').rejects(new Error('Error de base de datos'));\nconst req = {};\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait TipoProductoController.getAllTipoProductos(req, res);\nexpect(res.status.calledWith(500)).to.be.true;\nexpect(res.json.calledWith({\n    code: 500,\n    message: 'Error de base de datos',\n    data: null\n})).to.be.true;",
                   "err": {},
-                  "uuid": "09697f46-faaf-4344-aae2-12ec04422478",
-                  "parentUUID": "0d8f5f2a-11a7-42fb-b3a8-c433b7e6479d",
+                  "uuid": "4fa49696-ec47-4906-97b8-55371db33c74",
+                  "parentUUID": "97613429-e543-4dc5-9217-492d611bc11d",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "f841b8b8-99dd-4662-a6ec-c740e8bfc56f",
-                "09697f46-faaf-4344-aae2-12ec04422478"
+                "375e5265-3d79-4f79-af99-927ddb835f50",
+                "4fa49696-ec47-4906-97b8-55371db33c74"
               ],
               "failures": [],
               "pending": [],
@@ -2721,7 +2721,7 @@
               "_timeout": 2000
             },
             {
-              "uuid": "ad9ff42b-85eb-46eb-8999-220ade4c0e66",
+              "uuid": "27c87797-f23b-4638-81aa-2a67a9738b56",
               "title": "Método GET: Obtiene un tipo de producto por ID",
               "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\tipoProductoController.test.js",
               "file": "\\tests\\tipoProductoController.test.js",
@@ -2741,8 +2741,8 @@
                   "context": null,
                   "code": "const mockTipoProducto = { id: 1, nombre: 'Electrónica' };\nsinon.stub(TipoProducto, 'findById').resolves(mockTipoProducto);\nconst req = { params: { id: 1 } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait TipoProductoController.getTipoProductoById(req, res);\nexpect(res.status.calledWith(200)).to.be.true;\nexpect(res.json.calledWith({\n    code: 200,\n    message: 'Operación exitosa',\n    data: mockTipoProducto\n})).to.be.true;",
                   "err": {},
-                  "uuid": "ca602ac6-bf72-4d83-b0b7-cfe118190af0",
-                  "parentUUID": "ad9ff42b-85eb-46eb-8999-220ade4c0e66",
+                  "uuid": "69cfe608-be69-4913-8da4-59be84065228",
+                  "parentUUID": "27c87797-f23b-4638-81aa-2a67a9738b56",
                   "isHook": false,
                   "skipped": false
                 },
@@ -2759,8 +2759,8 @@
                   "context": null,
                   "code": "sinon.stub(TipoProducto, 'findById').resolves(null);\nconst req = { params: { id: 999 } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait TipoProductoController.getTipoProductoById(req, res);\nexpect(res.status.calledWith(404)).to.be.true;\nexpect(res.json.calledWith({\n    code: 404,\n    message: 'Tipo de producto no encontrado',\n    data: null\n})).to.be.true;",
                   "err": {},
-                  "uuid": "c46694cd-3781-4565-9745-182bf7968b72",
-                  "parentUUID": "ad9ff42b-85eb-46eb-8999-220ade4c0e66",
+                  "uuid": "ce3d6fd9-c2f0-4a6a-baa6-8da2b6b99ebb",
+                  "parentUUID": "27c87797-f23b-4638-81aa-2a67a9738b56",
                   "isHook": false,
                   "skipped": false
                 },
@@ -2777,17 +2777,17 @@
                   "context": null,
                   "code": "sinon.stub(TipoProducto, 'findById').rejects(new Error('Error de base de datos'));\nconst req = { params: { id: 1 } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait TipoProductoController.getTipoProductoById(req, res);\nexpect(res.status.calledWith(500)).to.be.true;\nexpect(res.json.calledWith({\n    code: 500,\n    message: 'Error de base de datos',\n    data: null\n})).to.be.true;",
                   "err": {},
-                  "uuid": "c490e4d7-2a54-4890-8d9a-c9f893ae11c1",
-                  "parentUUID": "ad9ff42b-85eb-46eb-8999-220ade4c0e66",
+                  "uuid": "1ff8922e-a025-45dd-af15-d7ab747d0a39",
+                  "parentUUID": "27c87797-f23b-4638-81aa-2a67a9738b56",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "ca602ac6-bf72-4d83-b0b7-cfe118190af0",
-                "c46694cd-3781-4565-9745-182bf7968b72",
-                "c490e4d7-2a54-4890-8d9a-c9f893ae11c1"
+                "69cfe608-be69-4913-8da4-59be84065228",
+                "ce3d6fd9-c2f0-4a6a-baa6-8da2b6b99ebb",
+                "1ff8922e-a025-45dd-af15-d7ab747d0a39"
               ],
               "failures": [],
               "pending": [],
@@ -2798,7 +2798,7 @@
               "_timeout": 2000
             },
             {
-              "uuid": "0cc4ad53-81e0-403e-951c-de45412fbfef",
+              "uuid": "837cd214-3ce4-432b-bb38-4abc8b1c1373",
               "title": "Método POST: Crea un nuevo tipo de producto",
               "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\tipoProductoController.test.js",
               "file": "\\tests\\tipoProductoController.test.js",
@@ -2818,8 +2818,8 @@
                   "context": null,
                   "code": "// Mock de la respuesta esperada\nconst nuevoTipoProducto = { id: 1, nombre: 'Michelln el de las llantas xd' };\nsinon.stub(TipoProducto, 'create').resolves(nuevoTipoProducto); // Simulamos la creación del tipo de producto\n    \nconst req = { body: { nombre: 'Electrónica' } }; // El cuerpo de la solicitud\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\n    \nawait TipoProductoController.createTipoProducto(req, res);\n    \n// Verifica que se haya llamado con el código 201 y los datos correctos\nexpect(res.status.calledWith(201)).to.be.true;\nexpect(res.json.calledWith({\n    code: 201,\n    message: 'El tipo de producto fue creado exitosamente',\n    data: nuevoTipoProducto\n})).to.be.true;",
                   "err": {},
-                  "uuid": "76b71363-a603-488c-b995-28a53a8abcc6",
-                  "parentUUID": "0cc4ad53-81e0-403e-951c-de45412fbfef",
+                  "uuid": "30858cab-a8f9-4218-8b2e-fe3e06a55d83",
+                  "parentUUID": "837cd214-3ce4-432b-bb38-4abc8b1c1373",
                   "isHook": false,
                   "skipped": false
                 },
@@ -2836,16 +2836,16 @@
                   "context": null,
                   "code": "sinon.stub(TipoProducto, 'create').rejects(new Error('Error al crear el tipo de producto'));\nconst req = { body: { nombre: 'Electrónica' } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait TipoProductoController.createTipoProducto(req, res);\nexpect(res.status.calledWith(500)).to.be.true;\nexpect(res.json.calledWith({\n    code: 500,\n    message: 'Error al crear el tipo de producto',\n    data: null\n})).to.be.true;",
                   "err": {},
-                  "uuid": "f93a40a0-88e4-451b-a5c3-775f6c402082",
-                  "parentUUID": "0cc4ad53-81e0-403e-951c-de45412fbfef",
+                  "uuid": "acd2bd18-d5f6-4dc0-88f5-c580dd6025ea",
+                  "parentUUID": "837cd214-3ce4-432b-bb38-4abc8b1c1373",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "76b71363-a603-488c-b995-28a53a8abcc6",
-                "f93a40a0-88e4-451b-a5c3-775f6c402082"
+                "30858cab-a8f9-4218-8b2e-fe3e06a55d83",
+                "acd2bd18-d5f6-4dc0-88f5-c580dd6025ea"
               ],
               "failures": [],
               "pending": [],
@@ -2856,7 +2856,7 @@
               "_timeout": 2000
             },
             {
-              "uuid": "70a69205-c6a7-4bee-8d10-20f9a5851bea",
+              "uuid": "e7d17647-de7e-4f84-90fb-d2b7886848cd",
               "title": "Método DELETE: Elimina un tipo de producto",
               "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\tipoProductoController.test.js",
               "file": "\\tests\\tipoProductoController.test.js",
@@ -2876,32 +2876,14 @@
                   "context": null,
                   "code": "const tipoProductoEliminado = { id: 1, nombre: 'Producto A' };  // Simulamos el objeto eliminado\nsinon.stub(TipoProducto, 'delete').resolves(tipoProductoEliminado);  // Devuelve el objeto eliminado\n        \nconst req = { params: { id: 1 } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\n        \nawait TipoProductoController.deleteTipoProducto(req, res);\n        \nexpect(res.status.calledWith(200)).to.be.true;\nexpect(res.json.calledWith({\n    code: 200,\n    message: 'Tipo de producto eliminado exitosamente',\n    data: tipoProductoEliminado  // Aseguramos que se devuelva el objeto eliminado\n})).to.be.true;",
                   "err": {},
-                  "uuid": "1e238d08-9480-448a-adef-9c73075fb317",
-                  "parentUUID": "70a69205-c6a7-4bee-8d10-20f9a5851bea",
+                  "uuid": "2339fcd5-c5a2-45f8-8b43-5bb4cb5c717c",
+                  "parentUUID": "e7d17647-de7e-4f84-90fb-d2b7886848cd",
                   "isHook": false,
                   "skipped": false
                 },
                 {
                   "title": "Debería devolver un error 404 si el tipo de producto no existe",
                   "fullTitle": "Pruebas del controlador de tipos de productos Método DELETE: Elimina un tipo de producto Debería devolver un error 404 si el tipo de producto no existe",
-                  "timedOut": false,
-                  "duration": 1,
-                  "state": "passed",
-                  "speed": "fast",
-                  "pass": true,
-                  "fail": false,
-                  "pending": false,
-                  "context": null,
-                  "code": "sinon.stub(TipoProducto, 'delete').resolves(false);\nconst req = { params: { id: 999 } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait TipoProductoController.deleteTipoProducto(req, res);\nexpect(res.status.calledWith(404)).to.be.true;\nexpect(res.json.calledWith({\n    code: 404,\n    message: 'Tipo de producto no encontrado',\n    data: null\n})).to.be.true;",
-                  "err": {},
-                  "uuid": "4224d075-5de6-4f8f-b89f-f7a8a05d1d7b",
-                  "parentUUID": "70a69205-c6a7-4bee-8d10-20f9a5851bea",
-                  "isHook": false,
-                  "skipped": false
-                },
-                {
-                  "title": "Debería manejar errores al eliminar un tipo de producto",
-                  "fullTitle": "Pruebas del controlador de tipos de productos Método DELETE: Elimina un tipo de producto Debería manejar errores al eliminar un tipo de producto",
                   "timedOut": false,
                   "duration": 0,
                   "state": "passed",
@@ -2910,19 +2892,37 @@
                   "fail": false,
                   "pending": false,
                   "context": null,
+                  "code": "sinon.stub(TipoProducto, 'delete').resolves(false);\nconst req = { params: { id: 999 } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait TipoProductoController.deleteTipoProducto(req, res);\nexpect(res.status.calledWith(404)).to.be.true;\nexpect(res.json.calledWith({\n    code: 404,\n    message: 'Tipo de producto no encontrado',\n    data: null\n})).to.be.true;",
+                  "err": {},
+                  "uuid": "a99a84ff-f780-4406-94b1-2e36c1b88e66",
+                  "parentUUID": "e7d17647-de7e-4f84-90fb-d2b7886848cd",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Debería manejar errores al eliminar un tipo de producto",
+                  "fullTitle": "Pruebas del controlador de tipos de productos Método DELETE: Elimina un tipo de producto Debería manejar errores al eliminar un tipo de producto",
+                  "timedOut": false,
+                  "duration": 1,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
                   "code": "sinon.stub(TipoProducto, 'delete').rejects(new Error('Error al eliminar el tipo de producto'));\nconst req = { params: { id: 1 } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait TipoProductoController.deleteTipoProducto(req, res);\nexpect(res.status.calledWith(500)).to.be.true;\nexpect(res.json.calledWith({\n    code: 500,\n    message: 'Error al eliminar el tipo de producto',\n    data: null\n})).to.be.true;",
                   "err": {},
-                  "uuid": "c3a61c9e-c23d-4dcc-b265-48f12b3743eb",
-                  "parentUUID": "70a69205-c6a7-4bee-8d10-20f9a5851bea",
+                  "uuid": "1e575537-2df0-42a1-9b48-78bc640fe0c6",
+                  "parentUUID": "e7d17647-de7e-4f84-90fb-d2b7886848cd",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "1e238d08-9480-448a-adef-9c73075fb317",
-                "4224d075-5de6-4f8f-b89f-f7a8a05d1d7b",
-                "c3a61c9e-c23d-4dcc-b265-48f12b3743eb"
+                "2339fcd5-c5a2-45f8-8b43-5bb4cb5c717c",
+                "a99a84ff-f780-4406-94b1-2e36c1b88e66",
+                "1e575537-2df0-42a1-9b48-78bc640fe0c6"
               ],
               "failures": [],
               "pending": [],
@@ -2943,7 +2943,7 @@
           "_timeout": 2000
         },
         {
-          "uuid": "b1a91cbe-0f03-4a2f-804f-b3874121de34",
+          "uuid": "d73a782e-b947-4f7a-8c1d-e71ebb617a1c",
           "title": "Pruebas del controlador de usuarios",
           "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\usuarioController.test.js",
           "file": "\\tests\\usuarioController.test.js",
@@ -2962,8 +2962,8 @@
               "context": null,
               "code": "sinon.restore();",
               "err": {},
-              "uuid": "10bf01e4-825e-4440-b012-7e2f5fedcf60",
-              "parentUUID": "b1a91cbe-0f03-4a2f-804f-b3874121de34",
+              "uuid": "34802b90-1d91-446e-8d05-dab37d49fefd",
+              "parentUUID": "d73a782e-b947-4f7a-8c1d-e71ebb617a1c",
               "isHook": true,
               "skipped": false
             }
@@ -2971,7 +2971,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "83e8e35b-0ede-4130-90c5-63e1e26beea4",
+              "uuid": "510ebab3-f982-4c90-97f5-905712cf566c",
               "title": "Método GET: Obtiene todos los usuarios",
               "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\usuarioController.test.js",
               "file": "\\tests\\usuarioController.test.js",
@@ -2991,8 +2991,8 @@
                   "context": null,
                   "code": "const mockUsuarios = [\n    { id: 1, nombre: 'Juan Pérez', email: 'juan@example.com' },\n    { id: 2, nombre: 'Ana Gómez', email: 'ana@example.com' }\n];\nsinon.stub(Usuario, 'findAll').resolves(mockUsuarios);\nconst req = { headers: { Authorization: 'powerclean' } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait UsuarioController.getAllUsuarios(req, res);\nexpect(res.status.calledWith(200)).to.be.true;\nexpect(res.json.calledWith({\n    code: 200,\n    message: 'Operación exitosa',\n    data: mockUsuarios\n})).to.be.true;",
                   "err": {},
-                  "uuid": "d8783825-b61c-4a0a-9505-811ad48815bd",
-                  "parentUUID": "83e8e35b-0ede-4130-90c5-63e1e26beea4",
+                  "uuid": "cd96cd56-58a2-48ee-a8d7-7e645a58c7cf",
+                  "parentUUID": "510ebab3-f982-4c90-97f5-905712cf566c",
                   "isHook": false,
                   "skipped": false
                 },
@@ -3009,16 +3009,16 @@
                   "context": null,
                   "code": "sinon.stub(Usuario, 'findAll').rejects(new Error('Error de base de datos'));\nconst req = { headers: { Authorization: 'powerclean' } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait UsuarioController.getAllUsuarios(req, res);\nexpect(res.status.calledWith(500)).to.be.true;\nexpect(res.json.calledWith({\n    code: 500,\n    message: 'Error de base de datos',\n    data: null\n})).to.be.true;",
                   "err": {},
-                  "uuid": "cfc026e8-c034-4582-8dec-71e506d0695a",
-                  "parentUUID": "83e8e35b-0ede-4130-90c5-63e1e26beea4",
+                  "uuid": "a167b4fb-c8b6-4cd4-9fc9-f3f8ccdac842",
+                  "parentUUID": "510ebab3-f982-4c90-97f5-905712cf566c",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "d8783825-b61c-4a0a-9505-811ad48815bd",
-                "cfc026e8-c034-4582-8dec-71e506d0695a"
+                "cd96cd56-58a2-48ee-a8d7-7e645a58c7cf",
+                "a167b4fb-c8b6-4cd4-9fc9-f3f8ccdac842"
               ],
               "failures": [],
               "pending": [],
@@ -3029,7 +3029,7 @@
               "_timeout": 2000
             },
             {
-              "uuid": "9080f22b-ec7a-40bf-af86-b218e4c3a23f",
+              "uuid": "5cf3f89c-9a53-4ca4-b0f7-bdc3c2a4a56d",
               "title": "Método DELETE: Elimina un usuario",
               "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\usuarioController.test.js",
               "file": "\\tests\\usuarioController.test.js",
@@ -3049,15 +3049,15 @@
                   "context": null,
                   "code": "sinon.stub(Usuario, 'delete').rejects(new Error('Error al eliminar el usuario'));\nconst req = { params: { id: 1 }, headers: { Authorization: 'powerclean' } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait UsuarioController.delete(req, res);\nexpect(res.status.calledWith(500)).to.be.true;\nexpect(res.json.calledWith({\n    code: 500,\n    message: 'Error al eliminar el usuario',\n    data: null\n})).to.be.true;",
                   "err": {},
-                  "uuid": "dd2abddf-5931-4694-92de-b7151276f3c0",
-                  "parentUUID": "9080f22b-ec7a-40bf-af86-b218e4c3a23f",
+                  "uuid": "3be78840-cb8f-4421-a40a-99b90e0c7a24",
+                  "parentUUID": "5cf3f89c-9a53-4ca4-b0f7-bdc3c2a4a56d",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "dd2abddf-5931-4694-92de-b7151276f3c0"
+                "3be78840-cb8f-4421-a40a-99b90e0c7a24"
               ],
               "failures": [],
               "pending": [],
@@ -3068,7 +3068,7 @@
               "_timeout": 2000
             },
             {
-              "uuid": "d12170e9-188b-43ec-a7ca-ab40fb6783ef",
+              "uuid": "bb4f2120-3e8b-4c93-aac3-3d6bed925c0e",
               "title": "Método GET: Genera y descarga un archivo Excel con la lista de usuarios",
               "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\usuarioController.test.js",
               "file": "\\tests\\usuarioController.test.js",
@@ -3079,7 +3079,7 @@
                   "title": "Debería generar y descargar el archivo Excel exitosamente",
                   "fullTitle": "Pruebas del controlador de usuarios Método GET: Genera y descarga un archivo Excel con la lista de usuarios Debería generar y descargar el archivo Excel exitosamente",
                   "timedOut": false,
-                  "duration": 15,
+                  "duration": 14,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -3088,20 +3088,20 @@
                   "context": null,
                   "code": "const mockUsuarios = [\n    { id: 1, nombre: 'Juan Pérez', email: 'juan@example.com' },\n    { id: 2, nombre: 'Ana Gómez', email: 'ana@example.com' }\n];\nsinon.stub(Usuario, 'generarExcel').resolves(mockUsuarios);\nconst req = { headers: { Authorization: 'powerclean' } };\nconst res = {\n    setHeader: sinon.stub(),\n    send: sinon.stub()\n};\nawait UsuarioController.downloadUsuariosExcel(req, res);\nexpect(res.setHeader.calledWith('Content-Disposition', 'attachment; filename=usuarios.xlsx')).to.be.true;\nexpect(res.setHeader.calledWith('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')).to.be.true;\nexpect(res.send.called).to.be.true;",
                   "err": {},
-                  "uuid": "d06df6bd-057a-4486-be68-14c5d1d61254",
-                  "parentUUID": "d12170e9-188b-43ec-a7ca-ab40fb6783ef",
+                  "uuid": "163ba449-8a9a-4da4-83b7-bca86fa0341d",
+                  "parentUUID": "bb4f2120-3e8b-4c93-aac3-3d6bed925c0e",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "d06df6bd-057a-4486-be68-14c5d1d61254"
+                "163ba449-8a9a-4da4-83b7-bca86fa0341d"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 15,
+              "duration": 14,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
@@ -3117,7 +3117,7 @@
           "_timeout": 2000
         },
         {
-          "uuid": "e518b054-8623-4e51-9c77-784e33cbf2b9",
+          "uuid": "8c69e4fc-37af-4c8f-820b-a3a21a8088ef",
           "title": "Pruebas del controlador de ventas",
           "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\ventasController.test.js",
           "file": "\\tests\\ventasController.test.js",
@@ -3127,7 +3127,7 @@
               "title": "\"after each\" hook in \"Pruebas del controlador de ventas\"",
               "fullTitle": "Pruebas del controlador de ventas \"after each\" hook in \"Pruebas del controlador de ventas\"",
               "timedOut": false,
-              "duration": 1,
+              "duration": 0,
               "state": null,
               "speed": null,
               "pass": false,
@@ -3136,8 +3136,8 @@
               "context": null,
               "code": "sinon.restore();",
               "err": {},
-              "uuid": "1eb90585-9d0b-45db-a67d-a768044ff89f",
-              "parentUUID": "e518b054-8623-4e51-9c77-784e33cbf2b9",
+              "uuid": "f462a1af-ae66-4136-8a4d-fa9736a7a68d",
+              "parentUUID": "8c69e4fc-37af-4c8f-820b-a3a21a8088ef",
               "isHook": true,
               "skipped": false
             }
@@ -3145,7 +3145,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "699ce209-4457-4b25-9aa6-0945f0749b72",
+              "uuid": "96e1a9a5-b0e5-4afd-9fbe-4408ccddb556",
               "title": "Método GET: Obtiene todas las ventas",
               "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\ventasController.test.js",
               "file": "\\tests\\ventasController.test.js",
@@ -3165,8 +3165,8 @@
                   "context": null,
                   "code": "const mockVentas = [\n    { id: 1, folioVenta: 'V001', total: 100 },\n    { id: 2, folioVenta: 'V002', total: 200 }\n];\nsinon.stub(Venta, 'findAll').resolves(mockVentas);\nconst req = { headers: { Authorization: 'powerclean' } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait VentaController.getAllVentas(req, res);\nexpect(res.status.calledWith(200)).to.be.true;\nexpect(res.json.calledWith({\n    code: 200,\n    message: 'Operación exitosa',\n    data: mockVentas\n})).to.be.true;",
                   "err": {},
-                  "uuid": "b2909823-73fb-4146-85f2-5f7c3b7d3af0",
-                  "parentUUID": "699ce209-4457-4b25-9aa6-0945f0749b72",
+                  "uuid": "74709834-a609-44ea-a877-1ee7544750fb",
+                  "parentUUID": "96e1a9a5-b0e5-4afd-9fbe-4408ccddb556",
                   "isHook": false,
                   "skipped": false
                 },
@@ -3174,7 +3174,7 @@
                   "title": "Debería manejar errores al obtener las ventas",
                   "fullTitle": "Pruebas del controlador de ventas Método GET: Obtiene todas las ventas Debería manejar errores al obtener las ventas",
                   "timedOut": false,
-                  "duration": 2,
+                  "duration": 1,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -3183,27 +3183,27 @@
                   "context": null,
                   "code": "sinon.stub(Venta, 'findAll').rejects(new Error('Error de base de datos'));\nconst req = { headers: { Authorization: 'powerclean' } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait VentaController.getAllVentas(req, res);\nexpect(res.status.calledWith(500)).to.be.true;\nexpect(res.json.calledWith({\n    code: 500,\n    message: 'Error de base de datos',\n    data: null\n})).to.be.true;",
                   "err": {},
-                  "uuid": "889bef5a-d7a5-48cb-b0b5-18c1ad6d8d77",
-                  "parentUUID": "699ce209-4457-4b25-9aa6-0945f0749b72",
+                  "uuid": "2d406272-5e12-479f-af98-be0fa84506f3",
+                  "parentUUID": "96e1a9a5-b0e5-4afd-9fbe-4408ccddb556",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "b2909823-73fb-4146-85f2-5f7c3b7d3af0",
-                "889bef5a-d7a5-48cb-b0b5-18c1ad6d8d77"
+                "74709834-a609-44ea-a877-1ee7544750fb",
+                "2d406272-5e12-479f-af98-be0fa84506f3"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 3,
+              "duration": 2,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "9a12aadf-a77d-47c9-b125-88aac4d80e4d",
+              "uuid": "396b887c-adcd-49af-b7af-359643bba7c5",
               "title": "Método GET: Buscar ventas por todos los parámetros",
               "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\ventasController.test.js",
               "file": "\\tests\\ventasController.test.js",
@@ -3223,8 +3223,8 @@
                   "context": null,
                   "code": "const searchString = 'V001';\nconst mockVentas = [{ id: 1, folioVenta: 'V001', total: 100 }];\nsinon.stub(Venta, 'searchAllColumns').resolves(mockVentas);\nconst req = { params: { q: searchString }, headers: { Authorization: 'powerclean' } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait VentaController.searchAllColumnsVentas(req, res);\nexpect(res.status.calledWith(200)).to.be.true;\nexpect(res.json.calledWith({\n    code: 200,\n    message: 'Operación exitosa',\n    data: mockVentas\n})).to.be.true;",
                   "err": {},
-                  "uuid": "444ee59a-a929-4186-bfa9-9eca90e9a343",
-                  "parentUUID": "9a12aadf-a77d-47c9-b125-88aac4d80e4d",
+                  "uuid": "5583a9ac-3050-4041-a076-3e5f21a22015",
+                  "parentUUID": "396b887c-adcd-49af-b7af-359643bba7c5",
                   "isHook": false,
                   "skipped": false
                 },
@@ -3232,7 +3232,7 @@
                   "title": "Debería devolver un error si el parámetro \"q\" es obligatorio",
                   "fullTitle": "Pruebas del controlador de ventas Método GET: Buscar ventas por todos los parámetros Debería devolver un error si el parámetro \"q\" es obligatorio",
                   "timedOut": false,
-                  "duration": 0,
+                  "duration": 1,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -3241,27 +3241,27 @@
                   "context": null,
                   "code": "const req = { params: {}, headers: { Authorization: 'powerclean' } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait VentaController.searchAllColumnsVentas(req, res);\nexpect(res.status.calledWith(400)).to.be.true;\nexpect(res.json.calledWith({\n    code: 400,\n    message: \"El parámetro 'q' es obligatorio\",\n    data: null\n})).to.be.true;",
                   "err": {},
-                  "uuid": "bdcef286-9c78-4da7-8834-ee0218954431",
-                  "parentUUID": "9a12aadf-a77d-47c9-b125-88aac4d80e4d",
+                  "uuid": "751d46bc-ef24-44fe-9e81-337c7d73b597",
+                  "parentUUID": "396b887c-adcd-49af-b7af-359643bba7c5",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "444ee59a-a929-4186-bfa9-9eca90e9a343",
-                "bdcef286-9c78-4da7-8834-ee0218954431"
+                "5583a9ac-3050-4041-a076-3e5f21a22015",
+                "751d46bc-ef24-44fe-9e81-337c7d73b597"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 1,
+              "duration": 2,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "cf82590c-33bd-4747-9da2-38908e056d4d",
+              "uuid": "caa088e6-66cd-4d19-993d-b67020be1f77",
               "title": "Método POST: Crea una nueva venta",
               "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\ventasController.test.js",
               "file": "\\tests\\ventasController.test.js",
@@ -3281,8 +3281,8 @@
                   "context": null,
                   "code": "const nuevaVenta = { id: 1, folioVenta: 'V003', total: 300 };\nsinon.stub(Venta, 'create').resolves(nuevaVenta);\nconst req = { body: { folioVenta: 'V003', total: 300 }, headers: { Authorization: 'powerclean' } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait VentaController.createVenta(req, res);\nexpect(res.status.calledWith(201)).to.be.true;\nexpect(res.json.calledWith({\n    code: 201,\n    message: 'Venta creada exitosamente',\n    data: nuevaVenta\n})).to.be.true;",
                   "err": {},
-                  "uuid": "dbca45e5-5639-4407-b564-2feaa4ebd559",
-                  "parentUUID": "cf82590c-33bd-4747-9da2-38908e056d4d",
+                  "uuid": "0678268f-b080-449f-8fc3-d358c9839bca",
+                  "parentUUID": "caa088e6-66cd-4d19-993d-b67020be1f77",
                   "isHook": false,
                   "skipped": false
                 },
@@ -3299,16 +3299,16 @@
                   "context": null,
                   "code": "sinon.stub(Venta, 'create').rejects(new Error('Error al crear la venta'));\nconst req = { body: { folioVenta: 'V003', total: 300 }, headers: { Authorization: 'powerclean' } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait VentaController.createVenta(req, res);\nexpect(res.status.calledWith(500)).to.be.true;\nexpect(res.json.calledWith({\n    code: 500,\n    message: 'Error al crear la venta',\n    data: null\n})).to.be.true;",
                   "err": {},
-                  "uuid": "becaf117-6fab-4b30-996c-88280cffd16e",
-                  "parentUUID": "cf82590c-33bd-4747-9da2-38908e056d4d",
+                  "uuid": "36a68782-2255-48e1-984a-4aecbc24d3f3",
+                  "parentUUID": "caa088e6-66cd-4d19-993d-b67020be1f77",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "dbca45e5-5639-4407-b564-2feaa4ebd559",
-                "becaf117-6fab-4b30-996c-88280cffd16e"
+                "0678268f-b080-449f-8fc3-d358c9839bca",
+                "36a68782-2255-48e1-984a-4aecbc24d3f3"
               ],
               "failures": [],
               "pending": [],
@@ -3319,7 +3319,7 @@
               "_timeout": 2000
             },
             {
-              "uuid": "a2bccb14-7285-464c-8f7f-9847dacf7bda",
+              "uuid": "85f9b1e1-1b72-4d96-b6cf-dc3890a90b57",
               "title": "Método GET: Obtiene una venta por ID (FolioVenta)",
               "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\ventasController.test.js",
               "file": "\\tests\\ventasController.test.js",
@@ -3330,7 +3330,7 @@
                   "title": "Debería obtener una venta por ID exitosamente",
                   "fullTitle": "Pruebas del controlador de ventas Método GET: Obtiene una venta por ID (FolioVenta) Debería obtener una venta por ID exitosamente",
                   "timedOut": false,
-                  "duration": 0,
+                  "duration": 1,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -3339,8 +3339,8 @@
                   "context": null,
                   "code": "const mockVenta = { id: 1, folioVenta: 'V001', total: 100 };\nsinon.stub(Venta, 'findById').resolves(mockVenta);\nconst req = { params: { id: '1' }, headers: { Authorization: 'powerclean' } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait VentaController.getVentaById(req, res);\nexpect(res.status.calledWith(200)).to.be.true;\nexpect(res.json.calledWith({\n    code: 200,\n    message: 'Operación exitosa',\n    data: mockVenta\n})).to.be.true;",
                   "err": {},
-                  "uuid": "17fa3a9f-68fd-4dce-acc4-77b7976ce25b",
-                  "parentUUID": "a2bccb14-7285-464c-8f7f-9847dacf7bda",
+                  "uuid": "711221a5-2b5e-4772-ab72-fac8accc1558",
+                  "parentUUID": "85f9b1e1-1b72-4d96-b6cf-dc3890a90b57",
                   "isHook": false,
                   "skipped": false
                 },
@@ -3348,7 +3348,7 @@
                   "title": "Debería devolver un error 404 si la venta no existe",
                   "fullTitle": "Pruebas del controlador de ventas Método GET: Obtiene una venta por ID (FolioVenta) Debería devolver un error 404 si la venta no existe",
                   "timedOut": false,
-                  "duration": 1,
+                  "duration": 2,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -3357,27 +3357,27 @@
                   "context": null,
                   "code": "sinon.stub(Venta, 'findById').resolves(null);\nconst req = { params: { id: '999' }, headers: { Authorization: 'powerclean' } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait VentaController.getVentaById(req, res);\nexpect(res.status.calledWith(404)).to.be.true;\nexpect(res.json.calledWith({\n    code: 404,\n    message: 'Operación de venta no encontrada',\n    data: null\n})).to.be.true;",
                   "err": {},
-                  "uuid": "10f09b39-758f-4258-a99c-1713afc64c6f",
-                  "parentUUID": "a2bccb14-7285-464c-8f7f-9847dacf7bda",
+                  "uuid": "e80b7db8-29a5-4be2-bc5d-331d82e5c10d",
+                  "parentUUID": "85f9b1e1-1b72-4d96-b6cf-dc3890a90b57",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "17fa3a9f-68fd-4dce-acc4-77b7976ce25b",
-                "10f09b39-758f-4258-a99c-1713afc64c6f"
+                "711221a5-2b5e-4772-ab72-fac8accc1558",
+                "e80b7db8-29a5-4be2-bc5d-331d82e5c10d"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 1,
+              "duration": 3,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "004f5d05-2614-4d5a-8732-45c594551cb5",
+              "uuid": "307ae8d9-51a3-407e-9ab1-76ebd5fa888d",
               "title": "Método PUT: Actualiza una venta",
               "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\ventasController.test.js",
               "file": "\\tests\\ventasController.test.js",
@@ -3388,7 +3388,7 @@
                   "title": "Debería actualizar una venta exitosamente",
                   "fullTitle": "Pruebas del controlador de ventas Método PUT: Actualiza una venta Debería actualizar una venta exitosamente",
                   "timedOut": false,
-                  "duration": 1,
+                  "duration": 0,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -3397,8 +3397,8 @@
                   "context": null,
                   "code": "const ventaActualizada = { id: 1, folioVenta: 'V001', total: 150 };\nsinon.stub(Venta, 'update').resolves(ventaActualizada);\nconst req = { params: { id: '1' }, body: { total: 150 }, headers: { Authorization: 'powerclean' } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait VentaController.updateVenta(req, res);\nexpect(res.status.calledWith(200)).to.be.true;\nexpect(res.json.calledWith({\n    code: 200,\n    message: 'Venta actualizada exitosamente',\n    data: ventaActualizada\n})).to.be.true;",
                   "err": {},
-                  "uuid": "b4476c1b-3db2-41d5-be61-ae3c8ec50be0",
-                  "parentUUID": "004f5d05-2614-4d5a-8732-45c594551cb5",
+                  "uuid": "30009817-296c-44ac-8d0d-69c5414222fc",
+                  "parentUUID": "307ae8d9-51a3-407e-9ab1-76ebd5fa888d",
                   "isHook": false,
                   "skipped": false
                 },
@@ -3415,27 +3415,27 @@
                   "context": null,
                   "code": "sinon.stub(Venta, 'update').resolves(null);\nconst req = { params: { id: '999' }, body: { total: 150 }, headers: { Authorization: 'powerclean' } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait VentaController.updateVenta(req, res);\nexpect(res.status.calledWith(404)).to.be.true;\nexpect(res.json.calledWith({\n    code: 404,\n    message: 'Operación de venta no encontrada',\n    data: null\n})).to.be.true;",
                   "err": {},
-                  "uuid": "848d4f6d-29b9-47f3-bddc-644aa1ddd6fb",
-                  "parentUUID": "004f5d05-2614-4d5a-8732-45c594551cb5",
+                  "uuid": "792dd9d7-cf4d-4bb7-9f20-ba7c525004d2",
+                  "parentUUID": "307ae8d9-51a3-407e-9ab1-76ebd5fa888d",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "b4476c1b-3db2-41d5-be61-ae3c8ec50be0",
-                "848d4f6d-29b9-47f3-bddc-644aa1ddd6fb"
+                "30009817-296c-44ac-8d0d-69c5414222fc",
+                "792dd9d7-cf4d-4bb7-9f20-ba7c525004d2"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 2,
+              "duration": 1,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "2e77049b-5695-4a35-9475-aa926c164040",
+              "uuid": "615b8da3-f11f-4064-9e2c-b34c0f9ec7de",
               "title": "Método DELETE: Elimina una venta",
               "fullFile": "D:\\4toCuatri\\DOCKER\\powerclean\\tests\\ventasController.test.js",
               "file": "\\tests\\ventasController.test.js",
@@ -3455,8 +3455,8 @@
                   "context": null,
                   "code": "const ventaEliminada = { id: 1, folioVenta: 'V001', total: 100 };\nsinon.stub(Venta, 'delete').resolves(ventaEliminada);\nconst req = { params: { id: '1' }, headers: { Authorization: 'powerclean' } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait VentaController.deleteVenta(req, res);\nexpect(res.status.calledWith(200)).to.be.true;\nexpect(res.json.calledWith({\n    code: 200,\n    message: 'Venta eliminada exitosamente',\n    data: null\n})).to.be.true;",
                   "err": {},
-                  "uuid": "3c8daa24-f1f8-4b79-b749-2bbd8b59a249",
-                  "parentUUID": "2e77049b-5695-4a35-9475-aa926c164040",
+                  "uuid": "b5f4e9a5-1a71-402f-91cb-c7e2b30f3e17",
+                  "parentUUID": "615b8da3-f11f-4064-9e2c-b34c0f9ec7de",
                   "isHook": false,
                   "skipped": false
                 },
@@ -3473,16 +3473,16 @@
                   "context": null,
                   "code": "sinon.stub(Venta, 'delete').resolves(false);\nconst req = { params: { id: '999' }, headers: { Authorization: 'powerclean' } };\nconst res = {\n    status: sinon.stub().returnsThis(),\n    json: sinon.stub()\n};\nawait VentaController.deleteVenta(req, res);\nexpect(res.status.calledWith(404)).to.be.true;\nexpect(res.json.calledWith({\n    code: 404,\n    message: 'Operación de venta no encontrada',\n    data: null\n})).to.be.true;",
                   "err": {},
-                  "uuid": "99a4cede-2721-45a2-82a8-1c864b082337",
-                  "parentUUID": "2e77049b-5695-4a35-9475-aa926c164040",
+                  "uuid": "0a90a3f2-81e9-49db-9c9d-2b69cb7a1f3f",
+                  "parentUUID": "615b8da3-f11f-4064-9e2c-b34c0f9ec7de",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "3c8daa24-f1f8-4b79-b749-2bbd8b59a249",
-                "99a4cede-2721-45a2-82a8-1c864b082337"
+                "b5f4e9a5-1a71-402f-91cb-c7e2b30f3e17",
+                "0a90a3f2-81e9-49db-9c9d-2b69cb7a1f3f"
               ],
               "failures": [],
               "pending": [],
