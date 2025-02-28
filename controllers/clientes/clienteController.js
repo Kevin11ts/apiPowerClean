@@ -4,7 +4,7 @@ import excel from 'xlsx';
 class ClienteController {
 
     static async getAllClientes(req, res) {
-        try { --aqui va clientes
+        try {
             const clientes = await Cliente.findAll();
             return res.status(200).json({ code: 200, message: "Operación exitosa", data: clientes });
         } catch (error) {

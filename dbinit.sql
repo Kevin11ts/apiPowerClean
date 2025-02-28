@@ -119,14 +119,7 @@ CREATE TABLE TIPO_PRODUCTOS(
   Tipo VARCHAR(40) NOT NULL, 
   PRIMARY KEY (IdTipoProducto)
 );
-INSERT INTO TIPO_PRODUCTOS(Tipo)
-VALUES ('Productos de limpieza');
-INSERT INTO TIPO_PRODUCTOS(Tipo)
-VALUES ('Aromatizantes');
-INSERT INTO TIPO_PRODUCTOS(Tipo)
-VALUES ('Bases multiusos');
-INSERT INTO TIPO_PRODUCTOS(Tipo)
-VALUES ('Shampoo para manos');
+ 
 /*-----------------------------------------------------------*/
 CREATE TABLE PRODUCTOS (
   IdProducto SERIAL, 
