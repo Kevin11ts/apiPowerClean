@@ -8,6 +8,8 @@ import tipoProductoRoute from './routes/tipoProducto/tipoProductoRoute.js';
 import inventarioRoute from './routes/inventario/inventarioRoute.js';
 import ventaRoute from './routes/ventas/ventaRoutes.js';
 import detalleVentaRoute from './routes/detalleVenta/detalleVentaRoute.js';
+import direccionRoutes from './routes/direcciones/direccionRoutes.js';
+
 
 // Importar rutas para MongoDB
 import configuracionRoutes from "./routes/configuracion/configuracionRoute.js";
@@ -41,6 +43,8 @@ app.use('/api', tipoProductoRoute);
 app.use('/api', inventarioRoute);
 app.use('/api', ventaRoute);
 app.use('/api', detalleVentaRoute);
+app.use('/api', direccionRoutes);
+
 
 // Define rutas para MongoDB
 app.use('/configuracion', configuracionRoutes);
