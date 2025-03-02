@@ -1,3 +1,9 @@
+import express from 'express';
+import UsuarioController from '../../controllers/usuarios/usuarioController.js';
+import upload from '../../config/multerConfig.js'; // Importa Multer
+
+const router = express.Router();
+
 /**
  * @swagger
  * components:
@@ -21,6 +27,9 @@
  *         password:
  *           type: string
  *           description: Contraseña del usuario
+ *         img_url:
+ *           type: string
+ *           description: URL de la imagen de perfil del usuario
  *         created_at:
  *           type: string
  *           format: date-time
@@ -33,6 +42,7 @@
  *         name: "Juan Pérez"
  *         email: "usuario@example.com"
  *         password: "securepassword123"
+ *         img_url: "https://res.cloudinary.com/tu_cloud/image/upload/v1234567/usuarios/usuario_123456789.jpg"
  */
 
 /**
@@ -56,6 +66,7 @@
  *       500:
  *         description: Error del servidor
  */
+router.get('/usuarios', UsuarioController.getAllUsuarios);
 
 /**
  * @swagger
@@ -85,20 +96,35 @@
  *       500:
  *         description: Error del servidor
  */
+router.get('/usuarios/:id', UsuarioController.getUsuarioById);
 
 /**
  * @swagger
  * /api/usuarios:
  *   post:
  *     summary: Crea un nuevo usuario
- *     description: Crea un nuevo usuario en la base de datos.
+ *     description: Crea un nuevo usuario en la base de datos. Permite la subida de una imagen de perfil.
  *     tags: [Usuario]
  *     requestBody:
  *       required: true
  *       content:
- *         application/json:
+ *         multipart/form-data:
  *           schema:
- *             $ref: '#/components/schemas/Usuario'
+ *             type: object
+ *             properties:
+ *               name:
+ *                 type: string
+ *                 description: Nombre del usuario
+ *               email:
+ *                 type: string
+ *                 description: Correo electrónico del usuario
+ *               password:
+ *                 type: string
+ *                 description: Contraseña del usuario
+ *               file:
+ *                 type: string
+ *                 format: binary
+ *                 description: Imagen de perfil del usuario
  *     responses:
  *       201:
  *         description: Usuario creado correctamente
@@ -111,120 +137,7 @@
  *       500:
  *         description: Error del servidor
  */
-
-/**
- * @swagger
- * /api/usuarios/{id}:
- *   put:
- *     summary: Actualiza un usuario por ID
- *     description: Actualiza los detalles de un usuario específico.
- *     tags: [Usuario]
- *     parameters:
- *       - in: path
- *         name: id
- *         required: true
- *         schema:
- *           type: integer
- *         description: ID del usuario
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             $ref: '#/components/schemas/Usuario'
- *     security:
- *       - bearerAuth: []
- *     responses:
- *       200:
- *         description: Usuario actualizado correctamente
- *         content:
- *           application/json:
- *             schema:
- *               $ref: '#/components/schemas/Usuario'
- *       404:
- *         description: Usuario no encontrado
- *       500:
- *         description: Error del servidor
- */
-
-/**
- * @swagger
- * /api/usuarios/{id}:
- *   delete:
- *     summary: Elimina un usuario por ID
- *     description: Elimina un usuario de la base de datos por su ID.
- *     tags: [Usuario]
- *     parameters:
- *       - in: path
- *         name: id
- *         required: true
- *         schema:
- *           type: integer
- *         description: ID del usuario
- *     security:
- *       - bearerAuth: []
- *     responses:
- *       200:
- *         description: Usuario eliminado correctamente
- *         content:
- *           application/json:
- *             schema:
- *               $ref: '#/components/schemas/Usuario'
- *       404:
- *         description: Usuario no encontrado
- *       500:
- *         description: Error del servidor
- */
-
-/**
- * @swagger
- * /api/usuarios/search/{q}:
- *   get:
- *     summary: Busca usuarios en todas las columnas
- *     description: Realiza una búsqueda en todas las columnas de la tabla `usuarios` usando una cadena de búsqueda.
- *     tags: [Usuario]
- *     parameters:
- *       - in: path
- *         name: q
- *         required: true
- *         schema:
- *           type: string
- *         description: Cadena de búsqueda
- *     security:
- *       - bearerAuth: []
- *     responses:
- *       200:
- *         description: Resultados de la búsqueda
- *         content:
- *           application/json:
- *             schema:
- *               type: array
- *               items:
- *                 $ref: '#/components/schemas/Usuario'
- *       500:
- *         description: Error del servidor
- */
-
-/**
- * @swagger
- * /api/downloadUsuarios:
- *   get:
- *     summary: Descarga un archivo Excel con la lista de usuarios
- *     description: Genera y descarga un archivo Excel con la lista de correos de los usuarios.
- *     tags: [Usuario]
- *     security:
- *       - bearerAuth: []
- *     responses:
- *       200:
- *         description: Archivo Excel generado
- *         content:
- *           application/vnd.openxmlformats-officedocument.spreadsheetml.sheet:
- *             schema:
- *               type: string
- *               format: binary
- *       500:
- *         description: Error del servidor
- */
+router.post('/usuarios', upload.single('file'), UsuarioController.register);
 
 /**
  * @swagger
@@ -261,38 +174,135 @@
  *       500:
  *         description: Error del servidor
  */
+router.post('/login', UsuarioController.login);
 
+/**
+ * @swagger
+ * /api/usuarios/{id}:
+ *   put:
+ *     summary: Actualiza un usuario por ID
+ *     description: Actualiza los detalles de un usuario específico. Permite la subida de una nueva imagen de perfil.
+ *     tags: [Usuario]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: integer
+ *         description: ID del usuario
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         multipart/form-data:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               email:
+ *                 type: string
+ *                 description: Correo electrónico del usuario
+ *               password:
+ *                 type: string
+ *                 description: Contraseña del usuario
+ *               file:
+ *                 type: string
+ *                 format: binary
+ *                 description: Nueva imagen de perfil del usuario
+ *     security:
+ *       - bearerAuth: []
+ *     responses:
+ *       200:
+ *         description: Usuario actualizado correctamente
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Usuario'
+ *       404:
+ *         description: Usuario no encontrado
+ *       500:
+ *         description: Error del servidor
+ */
+router.put('/usuarios/:id', upload.single('file'), UsuarioController.update);
 
-import express from 'express';
-import UsuarioController from '../../controllers/usuarios/usuarioController.js';
-
-const router = express.Router();
-
-// Obtener todos los usuarios
-router.get('/usuarios', UsuarioController.getAllUsuarios);
-
-// Obtener un usuario por su ID
-router.get('/usuarios/:id', UsuarioController.getUsuarioById);
-
-// Registro de usuario (crear nuevo)
-router.post('/usuarios', UsuarioController.register);
-
-// Iniciar sesión
-router.post('/login', UsuarioController.login); // Ruta para el login
-
-// Actualizar usuario
-router.put('/usuarios/:id', UsuarioController.update);
-
-// Eliminar usuario
+/**
+ * @swagger
+ * /api/usuarios/{id}:
+ *   delete:
+ *     summary: Elimina un usuario por ID
+ *     description: Elimina un usuario de la base de datos por su ID.
+ *     tags: [Usuario]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: integer
+ *         description: ID del usuario
+ *     security:
+ *       - bearerAuth: []
+ *     responses:
+ *       200:
+ *         description: Usuario eliminado correctamente
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Usuario'
+ *       404:
+ *         description: Usuario no encontrado
+ *       500:
+ *         description: Error del servidor
+ */
 router.delete('/usuarios/:id', UsuarioController.delete);
 
-// Buscar usuarios en todas las columnas
+/**
+ * @swagger
+ * /api/usuarios/search/{q}:
+ *   get:
+ *     summary: Busca usuarios en todas las columnas
+ *     description: Realiza una búsqueda en todas las columnas de la tabla `usuarios` usando una cadena de búsqueda.
+ *     tags: [Usuario]
+ *     parameters:
+ *       - in: path
+ *         name: q
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: Cadena de búsqueda
+ *     security:
+ *       - bearerAuth: []
+ *     responses:
+ *       200:
+ *         description: Resultados de la búsqueda
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/Usuario'
+ *       500:
+ *         description: Error del servidor
+ */
 router.get('/usuarios/search/:q', UsuarioController.searchAllColumns);
 
-// Ruta para subir imagen de perfil
-router.post('/usuarios/:id/upload', UsuarioController.uploadProfileImage);
-
-// Ruta para descargar el archivo Excel
+/**
+ * @swagger
+ * /api/downloadUsuarios:
+ *   get:
+ *     summary: Descarga un archivo Excel con la lista de usuarios
+ *     description: Genera y descarga un archivo Excel con la lista de correos de los usuarios.
+ *     tags: [Usuario]
+ *     security:
+ *       - bearerAuth: []
+ *     responses:
+ *       200:
+ *         description: Archivo Excel generado
+ *         content:
+ *           application/vnd.openxmlformats-officedocument.spreadsheetml.sheet:
+ *             schema:
+ *               type: string
+ *               format: binary
+ *       500:
+ *         description: Error del servidor
+ */
 router.get('/downloadUsuarios', UsuarioController.downloadUsuariosExcel);
 
 export default router;
