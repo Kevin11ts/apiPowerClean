@@ -232,3 +232,19 @@ VALUES
 (2, 3, 7),
 (2, 4, 3);
 /*-----------------------------------------------------------*/
+CREATE TABLE DIRECCIONES (
+  IdDireccion SERIAL PRIMARY KEY,
+  IdUsuario INT NOT NULL,
+  Calle VARCHAR(100) NOT NULL,
+  Avenida VARCHAR(100),  -- Opcional
+  Colonia VARCHAR(100) NOT NULL,
+  Ciudad VARCHAR(100) NOT NULL,
+  CodigoPostal VARCHAR(5) NOT NULL CHECK (CodigoPostal ~ '^[0-9]{5}$'),
+  NumeroExterior VARCHAR(10),  -- Opcional
+  NumeroInterior VARCHAR(10),  -- Opcional
+  Referencias TEXT,  -- Opcional
+  created_at TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP WITHOUT TIME ZONE,
+  deleted_at TIMESTAMP WITHOUT TIME ZONE,
+  FOREIGN KEY (IdUsuario) REFERENCES USUARIOS(IdUsuario)
+);
