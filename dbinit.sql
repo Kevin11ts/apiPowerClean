@@ -248,3 +248,6 @@ CREATE TABLE DIRECCIONES (
   deleted_at TIMESTAMP WITHOUT TIME ZONE,
   FOREIGN KEY (IdUsuario) REFERENCES USUARIOS(IdUsuario)
 );
+
+INSERT INTO DIRECCIONES (IdUsuario, Calle, Colonia, Ciudad, CodigoPostal)
+VALUES (1, 'Calle 1', 'Colonia 1', 'Ciudad 1', '12345');
