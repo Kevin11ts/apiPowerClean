@@ -29,10 +29,6 @@ VALUES
 ('Isabella Davis', 'isabella.davis@gmail.com', 'password123', '1234567800', 'trabajador', 'isabellad', 'https://res.cloudinary.com/demo/image/upload/v12345678/isabellad.jpg');
 
 
-INSERT INTO USUARIOS (name, email, password, phone, user_type, nickname, image_url, updated_at)  
-VALUES ('Juan Pérez', 'juan.perez@example.com', 'hashed_password', '1234567890', 'cliente', 'juanito', 'https://example.com/image.jpg');  
-
-
 /*CREATE EXTENSION pgcrypto;
 
 CREATE OR REPLACE FUNCTION encriptar_contraseña()
@@ -133,6 +129,7 @@ CREATE TABLE PRODUCTOS (
   PrecioMayoreo NUMERIC(10, 2) NOT NULL,
   PrecioMenudeo NUMERIC(10, 2) NOT NULL,
   PrecioVendedor NUMERIC(10, 2) NOT NULL,
+  image_url TEXT;
   IdTipoProducto INT NOT NULL,
   created_at TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP WITHOUT TIME ZONE DEFAULT NULL,
