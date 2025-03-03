@@ -126,20 +126,20 @@
  *           schema:
  *             type: object
  *             properties:
- *               Nombre:
+ *               nombre:
  *                 type: string
- *               Descripcion:
+ *               descripcion:
  *                 type: string
- *               PrecioMayoreo:
+ *               preciomayoreo:
  *                 type: number
  *                 format: float
- *               PrecioMenudeo:
+ *               preciomenudeo:
  *                 type: number
  *                 format: float
- *               PrecioVendedor:
+ *               preciovendedor:
  *                 type: number
  *                 format: float
- *               IdTipoProducto:
+ *               idtipoproducto:
  *                 type: integer
  *               file:
  *                 type: string
