@@ -36,6 +36,9 @@
  *         IdTipoProducto:
  *           type: integer
  *           description: ID del tipo de producto asociado
+ *         image_url:
+ *           type: string
+ *           description: URL de la imagen del producto
  *         created_at:
  *           type: string
  *           format: date-time
@@ -56,6 +59,7 @@
  *         PrecioMenudeo: 120.00
  *         PrecioVendedor: 110.00
  *         IdTipoProducto: 2
+ *         image_url: "https://example.com/imagen.jpg"
  *         created_at: "2024-01-01T12:00:00Z"
  *         updated_at: "2024-01-02T12:00:00Z"
  *         delete_at: null
@@ -113,14 +117,34 @@
  * /api/productos:
  *   post:
  *     summary: Crea un nuevo producto
- *     description: Crea un nuevo producto en la base de datos.
+ *     description: Crea un nuevo producto en la base de datos. Permite subir una imagen.
  *     tags: [Producto]
  *     requestBody:
  *       required: true
  *       content:
- *         application/json:
+ *         multipart/form-data:
  *           schema:
- *             $ref: '#/components/schemas/Producto'
+ *             type: object
+ *             properties:
+ *               Nombre:
+ *                 type: string
+ *               Descripcion:
+ *                 type: string
+ *               PrecioMayoreo:
+ *                 type: number
+ *                 format: float
+ *               PrecioMenudeo:
+ *                 type: number
+ *                 format: float
+ *               PrecioVendedor:
+ *                 type: number
+ *                 format: float
+ *               IdTipoProducto:
+ *                 type: integer
+ *               file:
+ *                 type: string
+ *                 format: binary
+ *                 description: Imagen del producto
  *     responses:
  *       201:
  *         description: Producto creado correctamente
@@ -137,7 +161,7 @@
  * /api/productos/{id}:
  *   put:
  *     summary: Actualiza un producto por ID
- *     description: Actualiza los datos de un producto específico.
+ *     description: Actualiza los datos de un producto específico. Permite cambiar la imagen.
  *     tags: [Producto]
  *     parameters:
  *       - in: path
@@ -149,9 +173,29 @@
  *     requestBody:
  *       required: true
  *       content:
- *         application/json:
+ *         multipart/form-data:
  *           schema:
- *             $ref: '#/components/schemas/Producto'
+ *             type: object
+ *             properties:
+ *               Nombre:
+ *                 type: string
+ *               Descripcion:
+ *                 type: string
+ *               PrecioMayoreo:
+ *                 type: number
+ *                 format: float
+ *               PrecioMenudeo:
+ *                 type: number
+ *                 format: float
+ *               PrecioVendedor:
+ *                 type: number
+ *                 format: float
+ *               IdTipoProducto:
+ *                 type: integer
+ *               file:
+ *                 type: string
+ *                 format: binary
+ *                 description: Nueva imagen del producto (opcional)
  *     responses:
  *       200:
  *         description: Producto actualizado correctamente
@@ -164,7 +208,6 @@
  *       500:
  *         description: Error del servidor
  */
-
 /**
  * @swagger
  * /api/productos/{id}:
@@ -240,20 +283,16 @@
 
 import express from 'express';
 import ProductController from '../../controllers/productos/productoController.js';
-//import { update } from '../../models/productos/productoModel.js';
+import upload from '../../config/multerConfig.js'; // Importa Multer
 
 const router = express.Router();
 
 router.get('/productos', ProductController.getAllProductos);
 router.get('/productos/:id', ProductController.getProductoById);
-router.post('/productos', ProductController.createProducto);
-router.put('/productos/:id', ProductController.updateProducto);
+router.post('/productos', upload.single('file'), ProductController.createProducto);
+router.put('/productos/:id', upload.single('file'), ProductController.updateProducto);
 router.delete('/productos/:id', ProductController.deleteProducto);
 router.get('/productos/search/:q', ProductController.searchAllColumns);
-
-// Nueva ruta para descargar el archivo Excel
 router.get('/downloadProductos', ProductController.downloadProductosExcel);
-
-// Ejemplo de uso de esta ruta: http://localhost:3000/api/downloadProductos
 
 export default router;
