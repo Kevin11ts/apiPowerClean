@@ -8,24 +8,24 @@ export default class Producto {
             return result.rows;
         } catch (error) {
             console.error('Error al obtener productos:', error);
-            throw error; // Lanza el error para manejarlo en el controlador
+            throw error;
         }
     }
 
     // Crear un nuevo producto
     static async create(data) {
-        const { nombre, descripcion, preciomayoreo, preciomenudeo, preciovendedor, idtipoproducto } = data;
+        const { nombre, descripcion, preciomayoreo, preciomenudeo, preciovendedor, idtipoproducto, image_url } = data;
         try {
             const result = await pool.query(
-                `INSERT INTO productos (Nombre, Descripcion, PrecioMayoreo, PrecioMenudeo, PrecioVendedor, IdTipoProducto) 
-                 VALUES ($1, $2, $3, $4, $5, $6) 
+                `INSERT INTO productos (Nombre, Descripcion, PrecioMayoreo, PrecioMenudeo, PrecioVendedor, IdTipoProducto, image_url) 
+                 VALUES ($1, $2, $3, $4, $5, $6, $7) 
                  RETURNING *`,
-                [nombre, descripcion, preciomayoreo, preciomenudeo, preciovendedor, idtipoproducto]
+                [nombre, descripcion, preciomayoreo, preciomenudeo, preciovendedor, idtipoproducto, image_url]
             );
-            return result.rows[0]; // Devuelve el nuevo producto creado
+            return result.rows[0];
         } catch (error) {
             console.error('Error al crear producto:', error);
-            throw error; // Lanza el error para manejarlo en el controlador
+            throw error;
         }
     }
 
@@ -36,25 +36,25 @@ export default class Producto {
             return result.rows[0];
         } catch (error) {
             console.error('Error al obtener producto:', error);
-            throw error; // Lanza el error para manejarlo en el controlador
+            throw error;
         }
     }
 
     // Actualizar un producto
     static async update(id, data) {
-        const { nombre, descripcion, preciomayoreo, preciomenudeo, preciovendedor, idtipoproducto } = data;
+        const { nombre, descripcion, preciomayoreo, preciomenudeo, preciovendedor, idtipoproducto, image_url } = data;
         try {
             const result = await pool.query(
                 `UPDATE productos 
-                 SET Nombre = $1, Descripcion = $2, PrecioMayoreo = $3, PrecioMenudeo = $4, PrecioVendedor = $5, IdTipoProducto = $6, updated_at = current_timestamp 
-                 WHERE IdProducto = $7 AND delete_at IS NULL 
+                 SET Nombre = $1, Descripcion = $2, PrecioMayoreo = $3, PrecioMenudeo = $4, PrecioVendedor = $5, IdTipoProducto = $6, image_url = $7, updated_at = current_timestamp 
+                 WHERE IdProducto = $8 AND delete_at IS NULL 
                  RETURNING *`,
-                [nombre, descripcion, preciomayoreo, preciomenudeo, preciovendedor, idtipoproducto, id]
+                [nombre, descripcion, preciomayoreo, preciomenudeo, preciovendedor, idtipoproducto, image_url, id]
             );
             return result.rows[0];
         } catch (error) {
             console.error('Error al actualizar producto:', error);
-            throw error; // Lanza el error para manejarlo en el controlador
+            throw error;
         }
     }
 
@@ -68,7 +68,7 @@ export default class Producto {
             return result.rows[0];
         } catch (error) {
             console.error('Error al eliminar producto:', error);
-            throw error; // Lanza el error para manejarlo en el controlador
+            throw error;
         }
     }
 
@@ -88,7 +88,7 @@ export default class Producto {
             return result.rows;
         } catch (error) {
             console.error('Error al buscar productos:', error);
-            throw error; // Lanza el error para manejarlo en el controlador
+            throw error;
         }
     }
 
@@ -103,7 +103,7 @@ export default class Producto {
             return result.rows;
         } catch (error) {
             console.error('Error al generar Excel de productos:', error);
-            throw error; // Lanza el error para manejarlo en el controlador
+            throw error;
         }
     }
 }
