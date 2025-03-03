@@ -1,4 +1,6 @@
-import Producto from '../../models/productos/productoModel.js'; // Asegúrate de que esté bien importado
+import Producto from '../../models/productos/productoModel.js';
+import cloudinary from '../../config/cloudinaryConfig.js';
+import fs from 'fs';
 import excel from 'xlsx';
 
 class ProductoController {
@@ -30,7 +32,23 @@ class ProductoController {
     // Crear un nuevo producto
     static async createProducto(req, res) {
         try {
-            const producto = await Producto.create(req.body);
+            const file = req.file; // Obtenemos el archivo subido
+
+            let image_url = null;
+            if (file) {
+                // Subir la imagen a Cloudinary
+                const uploadResult = await cloudinary.uploader.upload(file.path, {
+                    folder: 'productos',
+                    public_id: `producto_${Date.now()}`, // Usamos un timestamp como public_id
+                    overwrite: true,
+                });
+                image_url = uploadResult.secure_url; // Asignamos la URL de la imagen a image_url
+
+                // Eliminar el archivo temporal después de subirlo a Cloudinary
+                fs.unlinkSync(file.path);
+            }
+
+            const producto = await Producto.create({ ...req.body, image_url });
             return res.status(201).json({ code: 201, message: "Producto creado exitosamente", data: producto });
         } catch (error) {
             return res.status(500).json({ code: 500, message: error.message, data: null });
@@ -53,7 +71,24 @@ class ProductoController {
     // Actualizar un producto por su ID
     static async updateProducto(req, res) {
         try {
-            const producto = await Producto.update(req.params.id, req.body);
+            const { id } = req.params;
+            const file = req.file; // Obtenemos el archivo subido
+
+            let image_url = null;
+            if (file) {
+                // Subir la imagen a Cloudinary
+                const uploadResult = await cloudinary.uploader.upload(file.path, {
+                    folder: 'productos',
+                    public_id: `producto_${id}`, // Usamos el ID del producto como public_id
+                    overwrite: true,
+                });
+                image_url = uploadResult.secure_url; // Asignamos la URL de la imagen a image_url
+
+                // Eliminar el archivo temporal después de subirlo a Cloudinary
+                fs.unlinkSync(file.path);
+            }
+
+            const producto = await Producto.update(id, { ...req.body, image_url });
             if (!producto) {
                 return res.status(404).json({ code: 404, message: "Producto no encontrado", data: null });
             }
