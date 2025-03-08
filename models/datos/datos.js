@@ -1,10 +1,24 @@
 import mongoose from "mongoose";
 
-const datosSchema = new mongoose.Schema({
-    elemento: String,
-    valor: Number,
-    unidades: String,
-    timestamp: { type: Date, default: Date.now }
-}, { versionKey: false });
-
-export default mongoose.model("Datos", datosSchema);
+const data = new mongoose.Schema(
+    {
+      sensor: {
+        type: String
+      },
+      unidad:
+      {
+          type:String
+      },
+      valor:{
+          type: String
+      }
+    },
+    {
+      timestamps: true, 
+      versionKey: false 
+    }
+  );
+  
+  const Data = mongoose.model("Data", data, "Data");
+  
+  export default Data; 
