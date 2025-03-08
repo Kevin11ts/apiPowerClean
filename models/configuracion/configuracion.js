@@ -1,8 +1,28 @@
 import mongoose from "mongoose";
 
-const configuracionSchema = new mongoose.Schema({
-    elemento: String,
-    estatus: String,
-});
+const configInit = new mongoose.Schema(
+  {
+    ledVerde: {
+      type: String
+    },
+    ledAmarillo: {
+      type: String
+    },
+    ledRojo: {
+      type: String
+    },
+    pot1: {
+      type: String
+    },
+    pot2: {
+      type: String
+    },
+    buzzer: {
+      type: String
+    }
+  },
+  { timestamps: true } // Opcional: para agregar createdAt y updatedAt automáticamente
+);
 
-export default mongoose.model("Configuracion", configuracionSchema);
+const ConfigInit = mongoose.model("ConfigInit", configInit, "ConfigInit");
+export default ConfigInit;
