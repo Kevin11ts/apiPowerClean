@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors'; 
 import productRoutes from './routes/productos/productoRoute.js';
 import clienteRoutes from './routes/clientes/clienteRoute.js';
 import empleadoRoutes from './routes/empleados/empleadoRoute.js';
@@ -8,8 +9,7 @@ import tipoProductoRoute from './routes/tipoProducto/tipoProductoRoute.js';
 import inventarioRoute from './routes/inventario/inventarioRoute.js';
 import ventaRoute from './routes/ventas/ventaRoutes.js';
 import detalleVentaRoute from './routes/detalleVenta/detalleVentaRoute.js';
-import direccionRoutes from './routes/direcciones/direccionRoutes.js';
-
+import direccionRoutes from './routes/direcciones/direccionRoutes.js'; 
 
 // Importar rutas para MongoDB
 import configuracionRoutes from "./routes/configuracion/configuracionRoute.js";
@@ -20,14 +20,14 @@ import swaggerDocs from './config/swagger.js';
 import dotenv from 'dotenv';
 
 // Importar conexión a PostgreSQL y MongoDB
-import './config/db.js';
-
+import './config/db.js'; // Asegúrate de que esta función esté exportada
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Middleware para parsear JSON
+// Middleware
+app.use(cors());
 app.use(express.json());
 
 // Inicializar Swagger
@@ -45,10 +45,9 @@ app.use('/api', ventaRoute);
 app.use('/api', detalleVentaRoute);
 app.use('/api', direccionRoutes);
 
-
 // Define rutas para MongoDB
-app.use('/configuracion', configuracionRoutes);
-app.use('/datos', datosRoutes);
+app.use('/api', configuracionRoutes);
+app.use('/api', datosRoutes);
 
 // Inicio del servidor
 app.listen(PORT, () => {
