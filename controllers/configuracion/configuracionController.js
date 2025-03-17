@@ -5,10 +5,10 @@ class ConfigInitController {
   // Obtener todos los registros
   static async getAll(req, res) {
     try {
-      const { ledVerde, ledAmarillo, ledRojo, pot1, pot2, buzzer } = req.query;
+      const { ledVerde, ledAmarillo, ledRojo, pot1, pot2, buzzer, ultrasonico } = req.query;
 
       // Validar que todos los parámetros estén presentes
-      if (!ledVerde || !ledAmarillo || !ledRojo || !pot1 || !pot2 || !buzzer) {
+      if (!ledVerde || !ledAmarillo || !ledRojo || !pot1 || !pot2 || !buzzer || !ultrasonico) {
         return res.status(400).send({ message: "Faltan parámetros en la solicitud" });
       }
 
@@ -22,6 +22,7 @@ class ConfigInitController {
           pot1,
           pot2,
           buzzer,
+          ultrasonico,
         },
         { new: true, upsert: true } // `new: true` devuelve el documento actualizado, `upsert: true` crea el documento si no existe
       );
@@ -38,7 +39,8 @@ class ConfigInitController {
         { sensor: "LED Rojo", unidad: "Estado", valor: ledRojo },
         { sensor: "Potenciómetro 1", unidad: "Valor", valor: pot1 },
         { sensor: "Potenciómetro 2", unidad: "Valor", valor: pot2 },
-        { sensor: "Buzzer", unidad: "Estado", valor: buzzer }
+        { sensor: "Buzzer", unidad: "Estado", valor: buzzer },
+        { sensor: "Sensor Ultrasónico", unidad: "cm", valor: ultrasonico } 
       ]);
 
       // Enviar la respuesta con la configuración actualizada y los nuevos datos
@@ -62,7 +64,7 @@ class ConfigInitController {
       if (!respuesta) {
         return res.status(404).send({ message: "Registro no encontrado" });
       }
-      res.send(respuesta);
+      
     } catch (error) {
       res.status(500).send({ message: "Error al actualizar el registro", error });
     }
