@@ -19,9 +19,11 @@ const configInit = new mongoose.Schema(
     },
     buzzer: {
       type: String
-    }
+    },
+    ultrasonico: { 
+      type: String }
   },
-  { timestamps: true } // Opcional: para agregar createdAt y updatedAt automáticamente
+  { timestamps: true, versionKey: false  } 
 );
 
 const ConfigInit = mongoose.model("ConfigInit", configInit, "ConfigInit");
